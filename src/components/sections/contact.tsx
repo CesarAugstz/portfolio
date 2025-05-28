@@ -76,7 +76,7 @@ export default function Contact() {
             </h2>
             <p className="text-muted-foreground">
               Have a project in mind or want to chat? Feel free to reach out.
-              I'm always open to discussing new projects, creative ideas, or
+              I&apos;m always open to discussing new projects, creative ideas, or
               opportunities to be part of your vision.
             </p>
           </motion.div>
@@ -87,7 +87,7 @@ export default function Contact() {
                 <CardHeader>
                   <CardTitle>Send a Message</CardTitle>
                   <CardDescription>
-                    Fill out the form below and I'll get back to you as soon as
+                    Fill out the form below and I&apos;ll get back to you as soon as
                     possible.
                   </CardDescription>
                 </CardHeader>
@@ -165,10 +165,10 @@ export default function Contact() {
                     <div>
                       <p className="font-medium">Phone</p>
                       <a
-                        href="tel:+11234567890"
+                        href="tel:+5565992560242"
                         className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                       >
-                        +1 (123) 456-7890
+                        +55 (65) 9 9256-0242
                       </a>
                     </div>
                   </div>
@@ -177,7 +177,7 @@ export default function Contact() {
                     <div>
                       <p className="font-medium">Location</p>
                       <p className="text-sm text-muted-foreground">
-                        San Francisco, California
+                        Cuiabá, MT, Brazil
                       </p>
                     </div>
                   </div>

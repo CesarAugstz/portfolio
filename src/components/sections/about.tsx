@@ -43,11 +43,11 @@ export default function About() {
           <motion.div variants={itemVariants} className="relative">
             <div className="relative aspect-square overflow-hidden rounded-lg">
               <Image
-                src="/images/profile.jpg"
+                src="/images/profile.png"
                 alt="Cesar Filho"
-                width={200}
-                height={200}
-                className="object-cover"
+                width={500}
+                height={500}
+                className="object-cover size-full"
                 priority
               />
             </div>

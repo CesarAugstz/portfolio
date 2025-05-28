@@ -14,22 +14,22 @@ const skillCategories = [
     items: [
       { 
         name: "JavaScript", 
-        icon: "/icons/javascript.svg",
+        icon: "icon-[devicon--javascript]",
         description: "Modern ES6+, async programming, functional concepts"
       },
       { 
         name: "TypeScript", 
-        icon: "/icons/typescript.svg",
+        icon: "icon-[devicon--typescript]",
         description: "Type-safe code, interfaces, generics, utility types"
       },
       { 
         name: "C#", 
-        icon: "/icons/csharp.svg",
+        icon: "icon-[devicon--csharp]",
         description: "Object-oriented programming, LINQ, async/await"
       },
       { 
         name: "SQL", 
-        icon: "/icons/sql.svg",
+        icon: "icon-[devicon--sqldeveloper]",
         description: "Complex queries, joins, stored procedures, optimization"
       },
     ],
@@ -41,27 +41,26 @@ const skillCategories = [
     items: [
       { 
         name: "React", 
-        icon: "/icons/react.svg",
+        icon: "icon-[devicon--react]",
         description: "Hooks, context, custom hooks, performance optimization"
       },
       { 
         name: "VueJS", 
-        icon: "/icons/vue.svg",
+        icon: "icon-[devicon--vuejs]",
         description: "Component architecture, Vuex, Vue Router"
       },
       { 
         name: "AngularJS", 
-        icon: "/icons/angular.svg",
+        icon: "icon-[devicon--angularjs]",
         description: "Component-based architecture, services, dependency injection"
       },
       { 
         name: "NestJS", 
-        icon: "/icons/nestjs.svg",
+        icon: "icon-[devicon--nestjs]",
         description: "Modular architecture, dependency injection, decorators"
       },
       { 
         name: "Entity Framework", 
-        icon: "/icons/entity-framework.svg",
         description: "ORM, code-first approach, migrations, LINQ"
       },
     ],
@@ -73,32 +72,32 @@ const skillCategories = [
     items: [
       { 
         name: "Git", 
-        icon: "/icons/git.svg",
+        icon: "icon-[devicon--git]",
         description: "Version control, branching strategies, collaborative workflow"
       },
       { 
         name: "Docker", 
-        icon: "/icons/docker.svg",
+        icon: "icon-[devicon--docker]",
         description: "Containerization, multi-container apps, Docker Compose"
       },
       { 
         name: "CI/CD", 
-        icon: "/icons/cicd.svg",
+        icon: "icon-[devicon--azuredevops]",
         description: "Automated testing, deployment pipelines, GitLab/GitHub Actions"
       },
       { 
         name: "Azure", 
-        icon: "/icons/azure.svg",
+        icon: "icon-[devicon--azure]",
         description: "Cloud services, App Service, Azure Functions, Azure DevOps"
       },
       { 
         name: "Linux", 
-        icon: "/icons/linux.svg",
+        icon: "icon-[devicon--linux]",
         description: "Server management, bash scripting, service configuration"
       },
       { 
         name: "Vim", 
-        icon: "/icons/vim.svg",
+        icon: "icon-[devicon--vim]",
         description: "Advanced text editing, custom configurations, macros"
       },
     ],
@@ -110,22 +109,22 @@ const skillCategories = [
     items: [
       { 
         name: "MongoDB", 
-        icon: "/icons/mongodb.svg",
+        icon: "icon-[devicon--mongodb]",
         description: "NoSQL, aggregation pipeline, indexing strategies"
       },
       { 
         name: "PostgreSQL", 
-        icon: "/icons/postgresql.svg",
+        icon: "icon-[devicon--postgresql]",
         description: "Relational DB, advanced queries, performance tuning"
       },
       { 
         name: "MSSQL", 
-        icon: "/icons/mssql.svg",
+        icon: "icon-[devicon--microsoftsqlserver-wordmark]",
         description: "T-SQL, stored procedures, triggers, performance optimization"
       },
       { 
         name: "Prisma ORM", 
-        icon: "/icons/prisma.svg",
+        icon: "icon-[devicon--prisma]",
         description: "Type-safe database access, migrations, relations"
       },
     ],
@@ -300,16 +299,18 @@ export default function Skills() {
                               <div className="flex items-center gap-2">
                                 <div className="w-5 h-5 relative">
                                   <div className="absolute inset-0 flex items-center justify-center">
-                                    {/* This would be an actual image in production with proper paths */}
                                     <div className="w-4 h-4 bg-primary/20 rounded-full flex items-center justify-center text-xs">
-                                      {skill.name.charAt(0)}
+                                    { skill.icon ? (
+                                      <span className={skill.icon} />
+                                      ) : (
+                                      <span className="text-xs">{skill.name.charAt(0)}</span>
+                                    )}
                                     </div>
                                   </div>
                                 </div>
                                 <span>{skill.name}</span>
                               </div>
                               
-                              {/* Tooltip on hover */}
                               <AnimatePresence>
                                 {hoveredSkill === skill.name && (
                                   <motion.div
