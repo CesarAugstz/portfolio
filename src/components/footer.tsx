@@ -43,8 +43,8 @@ export default function Footer() {
 
   return (
     <footer className="border-t bg-muted/30">
-      <div className="container-width px-4 py-8 md:py-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container m-auto px-4 py-8 md:py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:justify-items-end">
           <motion.div
             variants={item}
             initial="hidden"

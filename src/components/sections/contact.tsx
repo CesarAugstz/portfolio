@@ -140,7 +140,7 @@ export default function Contact() {
             </motion.div>
 
             <motion.div variants={itemVariants} className="space-y-6">
-              <Card>
+              <Card className="h-full">
                 <CardHeader>
                   <CardTitle>Contact Information</CardTitle>
                   <CardDescription>

@@ -54,32 +54,33 @@ export default function Hero() {
           className="max-w-3xl mx-auto text-center"
         >
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary mb-4">
-              Frontend Developer
+            <span className="inline-block px-4 py-2 text-lg font-medium rounded-full bg-primary/10 text-primary mb-4">
+              👋 Hey there!
             </span>
           </motion.div>
           <motion.h1
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
           >
-            Creating{' '}
-            <span className="relative inline-block">
-              beautiful
+            I&apos;m{' '}
+            <span className="relative inline-block text-primary">
+              Cesar
               <motion.div
                 className="absolute -bottom-1 left-0 h-2 bg-primary/30 w-full rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: '100%' }}
                 transition={{ delay: 1, duration: 0.8 }}
               />
-            </span>{' '}
-            digital experiences
+            </span>
           </motion.h1>
           <motion.p
             variants={itemVariants}
             className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
           >
-          I&apos;m a passionate frontend developer specializing in creating interactive, 
-          responsive, and user-friendly web applications.
+            A passionate frontend developer who loves creating{' '}
+            <span className="text-primary font-medium">beautiful</span>,{' '}
+            <span className="text-primary font-medium">interactive</span>, and{' '}
+            <span className="text-primary font-medium">user-friendly</span> web experiences.
           </motion.p>
           <motion.div
             variants={itemVariants}

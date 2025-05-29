@@ -1,11 +1,11 @@
 import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
-const locales = ['en-US', 'nl-NL', 'nl']
+const locales = ['en-US', 'pt-BR']
 const defaultLocale = 'en-US'
 
-function getLocale(request) {
+function getLocale(request: NextRequest): string {
   // Get the preferred locale from the request headers
   const headers = {
     'accept-language':
@@ -16,31 +16,26 @@ function getLocale(request) {
   return match(languages, locales, defaultLocale)
 }
 
-export function middleware(request) {
+export function middleware(request: NextRequest) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl
 
   const pathnameHasLocale = locales.some(
-    locale => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
+    locale => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
 
   if (pathnameHasLocale) return
 
   // Redirect if there is no locale
   const locale = getLocale(request)
-console.log('locale', locale)
   request.nextUrl.pathname = `/${locale}${pathname}`
-  // e.g. incoming request is /products
-  // The new URL is now /en-US/products
-  console.log('redirect', request.nextUrl)
+  
   return NextResponse.redirect(request.nextUrl)
 }
 
 export const config = {
   matcher: [
     // Skip all internal paths (_next)
-    '/((?!_next).*)',
-    // Optional: only run on root (/) URL
-    // '/'
+    '/((?!_next|api|_vercel|.*\\..*).*)',
   ],
 }

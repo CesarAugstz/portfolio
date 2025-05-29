@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useIsMobile } from '@/components/ui/use-mobile'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import {
   Carousel,
@@ -23,7 +24,6 @@ import {
   LucideStar,
 } from 'lucide-react'
 
-// Skill data with icons and descriptions
 const skillCategories = [
   {
     category: 'Languages',
@@ -173,7 +173,6 @@ const skillCategories = [
   },
 ]
 
-// Featured technologies for carousel display
 const featuredTechnologies = [
   { name: 'React', icon: 'icon-[devicon--react]', category: 'Frontend' },
   {
@@ -237,27 +236,28 @@ const interests = [
 
 export default function Skills() {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.1 })
+  const isInView = useInView(ref, { once: true, amount: 0.05 })
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
+  const isMobile = useIsMobile()
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: isMobile ? 0.05 : 0.15,
+        delayChildren: 0.1,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
-      y: 0,
       opacity: 1,
-      transition: { duration: 0.5, ease: 'easeOut' },
+      y: 0,
+      transition: { duration: 0.3 },
     },
   }
 
@@ -265,22 +265,7 @@ export default function Skills() {
     initial: { scale: 1 },
     hover: {
       scale: 1.02,
-      boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
       transition: { duration: 0.2 },
-    },
-  }
-
-  const skillVariants = {
-    initial: {
-      backgroundColor: 'var(--background)',
-      borderColor: 'var(--border)',
-      scale: 1,
-    },
-    hover: {
-      backgroundColor: 'var(--primary-foreground)',
-      borderColor: 'var(--primary)',
-      scale: 1.02,
-      transition: { duration: 0.1 },
     },
   }
 
@@ -298,7 +283,6 @@ export default function Skills() {
       id="skills"
       className="relative section-padding bg-gradient-to-br from-background via-muted/20 to-background my-4 py-20 overflow-hidden"
     >
-      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
         <div className="absolute top-40 right-10 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl animate-pulse delay-1000"></div>
@@ -313,7 +297,6 @@ export default function Skills() {
           animate={isInView ? 'visible' : 'hidden'}
           className="space-y-20"
         >
-          {/* Header Section */}
           <motion.div
             variants={itemVariants}
             className="text-center max-w-4xl mx-auto"
@@ -331,7 +314,6 @@ export default function Skills() {
             </p>
           </motion.div>
 
-          {/* Featured Technologies Carousel */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-2 flex items-center justify-center gap-2">
@@ -381,7 +363,6 @@ export default function Skills() {
             </Carousel>
           </motion.div>
 
-          {/* Skills Section with Interactive Tabs */}
           <div className="space-y-12">
             <motion.div variants={itemVariants} className="text-center">
               <h3 className="text-3xl font-bold mb-2 flex items-center justify-center gap-2">
@@ -431,7 +412,7 @@ export default function Skills() {
               ))}
             </motion.div>
 
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="sync">
               <motion.div
                 key={activeCategory || 'all'}
                 initial={{ opacity: 0, y: 20 }}
@@ -449,10 +430,9 @@ export default function Skills() {
                     variants={cardVariants}
                     initial="initial"
                     whileHover="hover"
-                    className="h-full"
+                    className="h-full px-2"
                   >
-                    <Card className="mx-2 h-full border-2 hover:border-primary/50 transition-all duration-300 bg-background/50 backdrop-blur-sm overflow-hidden">
-                      {/* Gradient Header */}
+                    <Card className="h-full border-2 hover:border-primary/50 transition-all duration-300 bg-background/50 backdrop-blur-sm overflow-hidden">
                       <div
                         className={`h-2 bg-gradient-to-r ${skillGroup.color}`}
                       ></div>
@@ -470,14 +450,32 @@ export default function Skills() {
                       </CardHeader>
 
                       <CardContent className="space-y-4">
-                        {skillGroup.items.map(skill => (
+                        {skillGroup.items.map((skill, index) => (
                           <motion.div
                             key={skill.name}
-                            variants={skillVariants}
-                            initial="initial"
-                            whileHover="hover"
-                            onHoverStart={() => setHoveredSkill(skill.name)}
-                            onHoverEnd={() => setHoveredSkill(null)}
+                            initial={{ opacity: 0 }}
+                            animate={{
+                              opacity: 1,
+                              transition: {
+                                delay: isMobile ? 0.1 : index * 0.05,
+                              },
+                            }}
+                            whileHover={
+                              !isMobile
+                                ? {
+                                    backgroundColor:
+                                      'var(--primary-foreground)',
+                                    borderColor: 'var(--primary)',
+                                    scale: 1.02,
+                                  }
+                                : undefined
+                            }
+                            onHoverStart={() =>
+                              !isMobile && setHoveredSkill(skill.name)
+                            }
+                            onHoverEnd={() =>
+                              !isMobile && setHoveredSkill(null)
+                            }
                             className="relative p-4 rounded-lg border bg-background/30 hover:bg-background/60 transition-all duration-300 group"
                           >
                             <div className="flex items-start gap-4">
@@ -521,7 +519,6 @@ export default function Skills() {
             </AnimatePresence>
           </div>
 
-          {/* Project Experience Section - Carousel */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div className="text-center">
               <h3 className="text-3xl font-bold mb-2 flex items-center justify-center gap-2">
@@ -549,7 +546,7 @@ export default function Skills() {
                       whileHover="hover"
                       whileTap={{ scale: 0.98 }}
                       custom={index}
-                      className="h-full"
+                      className="h-full p-1"
                     >
                       <Card className="h-full border-2 hover:border-primary/50 transition-all duration-300 overflow-hidden bg-background/50 backdrop-blur-sm">
                         <div className="h-3 bg-gradient-to-r from-primary via-primary/80 to-primary/60"></div>
@@ -584,7 +581,6 @@ export default function Skills() {
             </Carousel>
           </motion.div>
 
-          {/* Areas of Interest - Interactive floating bubbles */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div className="text-center">
               <h3 className="text-3xl font-bold mb-2">Areas of Interest</h3>
@@ -607,10 +603,10 @@ export default function Skills() {
                   custom={index}
                   drag
                   dragConstraints={{
-                    left: -20,
-                    right: 20,
-                    top: -20,
-                    bottom: 20,
+                    left: -100,
+                    right: 100,
+                    top: -100,
+                    bottom: 100,
                   }}
                   className="px-5 py-3 bg-background/50 backdrop-blur-sm rounded-full text-sm font-medium border-2 border-border hover:border-primary cursor-grab active:cursor-grabbing transition-all duration-300"
                 >
@@ -620,12 +616,10 @@ export default function Skills() {
             </div>
           </motion.div>
 
-          {/* Call-to-action */}
           <motion.div
             variants={itemVariants}
             className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-primary/5 to-background rounded-2xl p-8 md:p-12 text-center border border-primary/20"
           >
-            {/* Background decoration */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-0 w-32 h-32 bg-primary rounded-full -translate-x-16 -translate-y-16"></div>
               <div className="absolute bottom-0 right-0 w-32 h-32 bg-secondary rounded-full translate-x-16 translate-y-16"></div>
