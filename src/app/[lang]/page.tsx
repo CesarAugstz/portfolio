@@ -5,6 +5,10 @@ import Projects from "@/components/sections/projects"
 import Skills from "@/components/sections/skills"
 import Contact from "@/components/sections/contact"
 
+export async function generateStaticParams() {
+  return [{ lang: 'en-US' }, { lang: 'pt-BR' }]
+}
+
 export const metadata: Metadata = {
   title: "Portfolio | Home",
   description: "Welcome to my portfolio website showcasing my work and skills",
