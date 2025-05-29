@@ -4,7 +4,7 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 
 export const metadata: Metadata = {
-  title: "Portfolio | Creative Developer",
+  title: "Portfolio | Cesar Filho",
   description: "Personal portfolio showcasing my projects and skills",
   keywords: ["developer", "portfolio", "react", "next.js", "web development"],
 }

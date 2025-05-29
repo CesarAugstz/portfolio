@@ -62,7 +62,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-6">
             {navItems.map((item, i) => (
               <motion.div
-                key={item.name}
+                key={item.name as string}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 + 0.2, duration: 0.5 }}
@@ -113,7 +113,7 @@ export default function Header() {
               <nav className="flex flex-col space-y-4">
                 {navItems.map((item, i) => (
                   <motion.div
-                    key={item.name}
+                    key={item.name as string}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1, duration: 0.3 }}

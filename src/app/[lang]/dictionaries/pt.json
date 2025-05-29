@@ -5,80 +5,62 @@
     "projects": "Projetos",
     "skills": "Habilidades",
     "contact": "Contato",
-    "portfolio": "Portfólio"
+    "portfolio": "Dev Cesar"
   },
   "hero": {
     "greeting": "👋 Olá!",
-    "prename": "Eu sou ", 
-    "name": "Cesar",
-    "description": "Um desenvolvedor frontend apaixonado que adora criar experiências web bonitas, interativas e amigáveis ao usuário.",
-    "beautiful": "bonitas",
+    "prename": "Eu sou ",
+    "name": "Cesar", 
+    "description": "Desenvolvedor frontend dedicado a criar experiências web excepcionais, interativas e intuitivas.",
+    "beautiful": "excepcionais",
     "interactive": "interativas",
-    "userFriendly": "amigáveis ao usuário",
+    "userFriendly": "intuitivas",
     "viewProjects": "Ver Projetos",
     "contactMe": "Entre em Contato",
     "github": "GitHub",
     "linkedin": "LinkedIn"
   },
   "about": {
-    "title": "Sobre Mim",
-    "description": "Olá! Eu sou Cesar Filho, um Desenvolvedor de Software com experiência em desenvolvimento front-end e back-end. Sou especializado em React, TypeScript, C#, MongoDB e SQL, tendo contribuído para projetos estratégicos como sistemas de gestão de previdência social e Censo.",
+    "title": "Sobre Mim", 
+    "description": "Olá! Sou Cesar Filho, Desenvolvedor de Software com ampla experiência em desenvolvimento frontend e backend. Especializo-me em React, TypeScript, C#, MongoDB e SQL, tendo contribuído para projetos estratégicos como sistemas de gestão previdenciária e aplicações do Censo.",
+    "additionalDescription": "Destaco-me em otimização de performance, arquitetura de software e implementação das melhores práticas de desenvolvimento. Minha expertise abrange múltiplos frameworks, incluindo React, Vue.js, Angular, NestJS e Entity Framework, permitindo adaptação perfeita a diversas tecnologias.",
     "yearsExperience": "Anos de Experiência",
-    "education": "Educação",
+    "education": "Formação",
     "degree": "Bacharelado em Ciência da Computação",
     "university": "Universidade Federal de Mato Grosso (UFMT) • 2020 - Presente",
-    "downloadResume": "Baixar Currículo"
-  },
-  "projects": {
-    "title": "Projetos em Destaque",
-    "subtitle": "Explore meu portfólio de soluções inovadoras. Cada projeto representa um desafio único resolvido com tecnologias modernas, design cuidadoso e atenção aos detalhes.",
-    "viewDemo": "Ver Demo",
-    "viewCode": "Código Fonte",
-    "projects": {
-      "college": {
-        "title": "Site da Faculdade",
-        "description": "Um site responsivo abrangente para uma faculdade com design moderno, portal do estudante, gestão de cursos e ferramentas administrativas. Construído com tecnologias de ponta para performance e experiência do usuário otimizadas."
+    "downloadResume": "Baixar Currículo",
+    "experience": {
+      "softwareDeveloper": {
+        "title": "Desenvolvedor Full Stack",
+        "company": "Agenda Assessoria Planejamento e Informática LTDA",
+        "period": "Julho 2022 - Junho 2025"
       },
-      "smartDevices": {
-        "title": "Gerenciador de Dispositivos Inteligentes",
-        "description": "Uma plataforma avançada de gestão IoT para controlar e monitorar dispositivos inteligentes através dos protocolos MQTT e Tuya. Possui status de dispositivos em tempo real, regras de automação e dashboard de análises abrangente."
+      "itIntern": {
+        "title": "Estagiário de TI",
+        "company": "Help Vida Home Care e Remoção EIRELI",
+        "period": "Outubro 2021 - Julho 2022"
       }
     }
   },
-  "skills": {
-    "title": "Habilidades & Expertise",
-    "subtitle": "Desenvolvi um conjunto diversificado de habilidades ao longo da minha carreira em desenvolvimento front-end e back-end. Meu arsenal técnico me permite construir soluções robustas, escaláveis e elegantes.",
-    "categories": {
-      "languages": {
-        "title": "Linguagens",
-        "description": "Linguagens de programação que domino"
-      },
-      "frontend": {
-        "title": "Frontend",
-        "description": "Frameworks e bibliotecas modernas para interfaces de usuário"
-      },
-      "backend": {
-        "title": "Backend",
-        "description": "Tecnologias server-side e bancos de dados"
-      },
-      "tools": {
-        "title": "Ferramentas & DevOps",
-        "description": "Ferramentas de desenvolvimento e plataformas de deploy"
-      }
+  "projects": {
+    "title": "Projetos em Destaque",
+    "subtitle": "Explore meu portfólio de soluções inovadoras. Cada projeto representa um desafio único solucionado com tecnologias modernas, design cuidadoso e atenção aos detalhes.",
+    "viewDemo": "Ver Demonstração",
+    "viewCode": "Ver Código",
+    "callToAction": {
+      "title": "Interessado no Meu Trabalho?",
+      "description": "Estes projetos representam apenas uma amostra do que posso criar. Estou sempre empolgado para enfrentar novos desafios e dar vida a ideias inovadoras. Vamos colaborar no seu próximo projeto!",
+      "exploreAll": "Explorar Todos os Projetos",
+      "getInTouch": "Entre em Contato"
     },
-    "featuredProjects": "Projetos em Destaque",
-    "projectDescriptions": {
-      "socialSecurity": {
-        "name": "Sistema de Gestão de Previdência Social",
-        "description": "Um sistema abrangente para gestão de pensões e benefícios usando arquitetura moderna"
+    "projects": {
+      "college": {
+        "title": "Site Institucional da Faculdade",
+        "description": "Website responsivo completo para instituição de ensino superior, com design moderno, portal do estudante, sistema de gestão de cursos e ferramentas administrativas. Desenvolvido com tecnologias de ponta para máxima performance e experiência do usuário."
       },
-      "recertification": {
-        "name": "Sistema de Recertificação Online de Registrantes",
-        "description": "Plataforma web para processamento e verificação de recertificações de usuários com autenticação segura"
-      },
-      "chatbot": {
-        "name": "Sistema de Chatbot",
-        "description": "Sistema de comunicação automatizada com capacidades de integração e automação de fluxo de trabalho"
+      "smartDevices": {
+        "title": "Gerenciador de Dispositivos Inteligentes",
+        "description": "Plataforma avançada de gestão IoT para controle e monitoramento de dispositivos inteligentes via protocolos MQTT e Tuya. Inclui status em tempo real, regras de automação e dashboard analítico completo."
       }
     }
   },
@@ -109,8 +91,23 @@
     }
   },
   "footer": {
+    "portfolio": {
+      "title": "Portfólio",
+      "description": "Uma vitrine dos meus projetos e habilidades como desenvolvedor."
+    },
+    "links": {
+      "title": "Links"
+    },
+    "contact": {
+      "title": "Contato",
+      "email": "dev.caugustoaf@gmail.com",
+      "phone": "(65) 9 9256-0242"
+    },
+    "social": {
+      "title": "Social"
+    },
     "copyright": "Todos os direitos reservados.",
-    "builtWith": "Construído com Next.js e Tailwind CSS"
+    "builtWith": "Desenvolvido com Next.js e Tailwind CSS"
   },
   "metadata": {
     "home": {

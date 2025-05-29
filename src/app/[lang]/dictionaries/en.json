@@ -5,35 +5,54 @@
     "projects": "Projects",
     "skills": "Skills",
     "contact": "Contact",
-    "portfolio": "Portfolio"
+    "portfolio": "Dev Cesar"
   },
   "hero": {
-    "greeting": "👋 Hey there!",
+    "greeting": "👋 Hello!",
     "prename": "I'm ",
     "name": "Cesar",
-    "description": "A passionate frontend developer who loves creating beautiful, interactive, and user-friendly web experiences.",
-    "beautiful": "beautiful",
+    "description": "A passionate frontend developer dedicated to crafting exceptional, interactive, and intuitive web experiences.",
+    "beautiful": "exceptional",
     "interactive": "interactive",
-    "userFriendly": "user-friendly",
+    "userFriendly": "intuitive",
     "viewProjects": "View Projects",
-    "contactMe": "Contact Me",
+    "contactMe": "Get in Touch",
     "github": "GitHub",
     "linkedin": "LinkedIn"
   },
   "about": {
     "title": "About Me",
-    "description": "Hello! I'm Cesar Filho, a Software Developer with experience in both front-end and back-end development. I specialize in React, TypeScript, C#, MongoDB, and SQL, having contributed to strategic projects like social security management systems and Census.",
+    "description": "Hello! I'm Cesar Filho, a Software Developer with extensive experience in both frontend and backend development. I specialize in React, TypeScript, C#, MongoDB, and SQL, having contributed to strategic projects including social security management systems and Census applications.",
+    "additionalDescription": "I excel in performance optimization, software architecture, and implementing development best practices. My expertise spans multiple frameworks including React, Vue.js, Angular, NestJS, and Entity Framework, enabling me to adapt seamlessly to diverse technology stacks.",
     "yearsExperience": "Years Experience",
     "education": "Education",
     "degree": "Bachelor's in Computer Science",
     "university": "Federal University of Mato Grosso (UFMT) • 2020 - Present",
-    "downloadResume": "Download Resume"
+    "downloadResume": "Download Resume",
+    "experience": {
+      "softwareDeveloper": {
+        "title": "Full Stack Developer",
+        "company": "Agenda Assessoria Planejamento e Informática LTDA",
+        "period": "July 2022 - June 2025"
+      },
+      "itIntern": {
+        "title": "IT Intern",
+        "company": "Help Vida Home Care e Remoção EIRELI",
+        "period": "October 2021 - July 2022"
+      }
+    }
   },
   "projects": {
     "title": "Featured Projects",
     "subtitle": "Explore my portfolio of innovative solutions. Each project represents a unique challenge solved with modern technologies, thoughtful design, and attention to detail.",
     "viewDemo": "Live Demo",
     "viewCode": "Source Code",
+    "callToAction": {
+      "title": "Interested in My Work?",
+      "description": "These projects represent just a glimpse of what I can create. I'm always excited to take on new challenges and bring innovative ideas to life. Let's collaborate on your next project!",
+      "exploreAll": "Explore All Projects",
+      "getInTouch": "Get In Touch"
+    },
     "projects": {
       "college": {
         "title": "College Website",
@@ -42,43 +61,6 @@
       "smartDevices": {
         "title": "Smart Devices Manager",
         "description": "An advanced IoT management platform for controlling and monitoring smart devices through MQTT and Tuya protocols. Features real-time device status, automation rules, and comprehensive analytics dashboard."
-      }
-    }
-  },
-  "skills": {
-    "title": "Skills & Expertise",
-    "subtitle": "I've developed a diverse set of skills throughout my career in both front-end and back-end development. My technical toolkit enables me to build robust, scalable, and elegant solutions.",
-    "categories": {
-      "languages": {
-        "title": "Languages",
-        "description": "Programming languages I've mastered"
-      },
-      "frontend": {
-        "title": "Frontend",
-        "description": "Modern frameworks and libraries for user interfaces"
-      },
-      "backend": {
-        "title": "Backend",
-        "description": "Server-side technologies and databases"
-      },
-      "tools": {
-        "title": "Tools & DevOps",
-        "description": "Development tools and deployment platforms"
-      }
-    },
-    "featuredProjects": "Featured Projects",
-    "projectDescriptions": {
-      "socialSecurity": {
-        "name": "Social Security Management System",
-        "description": "A comprehensive system for managing pension and benefits using modern architecture"
-      },
-      "recertification": {
-        "name": "Online Registrant Recertification System",
-        "description": "Web platform for processing and verifying user recertifications with secure authentication"
-      },
-      "chatbot": {
-        "name": "Chatbot System",
-        "description": "Automated communication system with integration capabilities and workflow automation"
       }
     }
   },
@@ -109,6 +91,21 @@
     }
   },
   "footer": {
+    "portfolio": {
+      "title": "Portfolio",
+      "description": "A showcase of my projects and skills as a developer."
+    },
+    "links": {
+      "title": "Links"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "dev.caugustoaf@gmail.com",
+      "phone": "(65) 9 9256-0242"
+    },
+    "social": {
+      "title": "Social"
+    },
     "copyright": "All rights reserved.",
     "builtWith": "Built with Next.js and Tailwind CSS"
   },

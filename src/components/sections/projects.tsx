@@ -231,10 +231,14 @@ export default function Projects() {
                       <div className="flex flex-col flex-grow p-6">
                         <CardHeader className="p-0 pb-4">
                           <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300">
-                            {project.id === 1 ? t('projects.projects.college.title') : t('projects.projects.smartDevices.title')}
+                            {project.id === 1
+                              ? t('projects.projects.college.title')
+                              : t('projects.projects.smartDevices.title')}
                           </CardTitle>
                           <CardDescription className="text-muted-foreground leading-relaxed">
-                            {project.id === 1 ? t('projects.projects.college.description') : t('projects.projects.smartDevices.description')}
+                            {project.id === 1
+                              ? t('projects.projects.college.description')
+                              : t('projects.projects.smartDevices.description')}
                           </CardDescription>
                         </CardHeader>
 
@@ -305,12 +309,10 @@ export default function Projects() {
             className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl p-8 md:p-12 text-center border border-primary/20"
           >
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Interested in My Work?
+              {t('projects.callToAction.title')}
             </h3>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-lg">
-              These projects represent just a glimpse of what I can create. I&apos;m
-              always excited to take on new challenges and bring innovative
-              ideas to life. Let&apos;s collaborate on your next project!
+              {t('projects.callToAction.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.div
@@ -324,7 +326,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                   >
                     <Github className="mr-2 h-5 w-5" />
-                    Explore All Projects
+                    {t('projects.callToAction.exploreAll')}
                   </Link>
                 </Button>
               </motion.div>
@@ -340,7 +342,7 @@ export default function Projects() {
                 >
                   <Link href="#contact">
                     <ExternalLink className="mr-2 h-5 w-5" />
-                    Get In Touch
+                    {t('projects.callToAction.getInTouch')}
                   </Link>
                 </Button>
               </motion.div>

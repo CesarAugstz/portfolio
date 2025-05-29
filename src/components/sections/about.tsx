@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import { useRef } from "react"
-import Image from "next/image"
-import { motion, useInView } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { FileText } from "lucide-react"
-import Link from "next/link"
-import { useTranslations } from "@/hooks/useTranslations"
+import { useRef } from 'react'
+import Image from 'next/image'
+import { motion, useInView } from 'framer-motion'
+import { Button } from '@/components/ui/button'
+import { FileText } from 'lucide-react'
+import Link from 'next/link'
+import { useTranslations } from '@/hooks/useTranslations'
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null)
@@ -39,7 +39,7 @@ export default function About() {
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate={isInView ? 'visible' : 'hidden'}
           className="grid md:grid-cols-2 gap-12 items-center"
         >
           <motion.div variants={itemVariants} className="relative">
@@ -56,19 +56,25 @@ export default function About() {
             <motion.div
               className="absolute -bottom-6 -right-0 bg-background p-4 rounded-lg shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+              animate={
+                isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+              }
               transition={{ delay: 0.6, duration: 0.5 }}
             >
               <div className="text-center">
                 <p className="text-4xl font-bold">3+</p>
-                <p className="text-sm text-muted-foreground">{t('about.yearsExperience')}</p>
+                <p className="text-sm text-muted-foreground">
+                  {t('about.yearsExperience')}
+                </p>
               </div>
             </motion.div>
           </motion.div>
 
           <div className="space-y-6">
             <motion.div variants={itemVariants}>
-              <h2 className="text-3xl font-bold tracking-tight mb-2">{t('about.title')}</h2>
+              <h2 className="text-3xl font-bold tracking-tight mb-2">
+                {t('about.title')}
+              </h2>
               <div className="h-1 w-20 bg-primary rounded-full mb-6"></div>
             </motion.div>
 
@@ -77,32 +83,49 @@ export default function About() {
             </motion.p>
 
             <motion.p variants={itemVariants} className="text-muted-foreground">
-              I excel in performance optimization, architecture definition, and adoption of development best practices. My skills span across
-              multiple frameworks including React, VueJS, AngularJS, NestJS, and Entity Framework, allowing me to adapt to various technology stacks.
+              {t('about.additionalDescription')}
             </motion.p>
 
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-semibold mb-3">{t('about.education')}</h3>
+              <h3 className="text-xl font-semibold mb-3">
+                {t('about.education')}
+              </h3>
               <ul className="space-y-4">
                 <li className="border-l-2 border-primary pl-4 py-1">
-                  <p className="font-medium">Software Developer</p>
-                  <p className="text-sm text-muted-foreground">Agenda Assessoria Planejamento e Informática LTDA • July 2022 - Present</p>
+                  <p className="font-medium">
+                    {t('about.experience.softwareDeveloper.title')}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('about.experience.softwareDeveloper.company')} •{' '}
+                    {t('about.experience.softwareDeveloper.period')}
+                  </p>
                 </li>
                 <li className="border-l-2 border-muted pl-4 py-1">
-                  <p className="font-medium">IT Intern</p>
-                  <p className="text-sm text-muted-foreground">Help Vida Home Care e Remoção EIRELI • October 2021 - July 2022</p>
+                  <p className="font-medium">
+                    {t('about.experience.itIntern.title')}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('about.experience.itIntern.company')} •{' '}
+                    {t('about.experience.itIntern.period')}
+                  </p>
                 </li>
                 <li className="border-l-2 border-muted pl-4 py-1">
                   <p className="font-medium">{t('about.degree')}</p>
-                  <p className="text-sm text-muted-foreground">{t('about.university')}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {t('about.university')}
+                  </p>
                 </li>
               </ul>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="pt-2 flex justify-center">
+            <motion.div
+              variants={itemVariants}
+              className="pt-2 flex justify-center"
+            >
               <Button asChild className="flex">
                 <Link href="/resume.pdf" target="_blank">
-                  <FileText className="mr-2 h-4 w-4" /> {t('about.downloadResume')}
+                  <FileText className="mr-2 h-4 w-4" />{' '}
+                  {t('about.downloadResume')}
                 </Link>
               </Button>
             </motion.div>

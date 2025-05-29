@@ -1,0 +1,149 @@
+{
+    "skills": {
+        "title": "Habilidades & Expertise",
+        "subtitle": "Desenvolvi um conjunto diversificado de competências ao longo da minha trajetória em desenvolvimento front-end e back-end. Meu arsenal técnico me permite construir soluções robustas, escaláveis e elegantes.",
+        "featuredTechnologies": {
+            "title": "Tecnologias Principais",
+            "subtitle": "Tecnologias que utilizo diariamente"
+        },
+        "technicalSkills": {
+            "title": "Competências Técnicas",
+            "subtitle": "Detalhamento da minha expertise técnica"
+        },
+        "projectExperience": {
+            "title": "Experiência em Projetos",
+            "subtitle": "Aplicação prática das minhas habilidades"
+        },
+        "areasOfInterest": {
+            "title": "Áreas de Interesse",
+            "subtitle": "Tecnologias e conceitos que me apaixonam"
+        },
+        "callToAction": {
+            "title": "Vamos Construir Algo Extraordinário Juntos",
+            "description": "Meu conjunto abrangente de habilidades e experiência comprovada me permite enfrentar desafios complexos e entregar soluções excepcionais. Sou apaixonado por assumir novas oportunidades que expandem os limites da inovação.",
+            "button": "Iniciar uma Conversa"
+        },
+        "categories": {
+            "languages": {
+                "title": "Linguagens",
+                "description": "Linguagens de programação que domino"
+            },
+            "frontend": {
+                "title": "Frontend",
+                "description": "Frameworks e bibliotecas modernas para interfaces de usuário"
+            },
+            "backend": {
+                "title": "Backend",
+                "description": "Tecnologias server-side e bancos de dados"
+            },
+            "tools": {
+                "title": "Ferramentas & DevOps",
+                "description": "Ferramentas de desenvolvimento e plataformas de deploy"
+            }
+        },
+        "items": {
+            "javascript": {
+                "name": "JavaScript",
+                "description": "ES6+ moderno, programação assíncrona, conceitos funcionais e padrões avançados de JavaScript para aplicações web dinâmicas."
+            },
+            "typescript": {
+                "name": "TypeScript",
+                "description": "Desenvolvimento type-safe com interfaces, generics, utility types e recursos avançados do TypeScript para aplicações escaláveis."
+            },
+            "csharp": {
+                "name": "C#",
+                "description": "Programação orientada a objetos, LINQ, padrões async/await e ecossistema .NET para desenvolvimento backend robusto."
+            },
+            "sql": {
+                "name": "SQL",
+                "description": "Queries complexas, joins, stored procedures, otimização de banco de dados e tuning de performance para gestão eficiente de dados."
+            },
+            "react": {
+                "name": "React",
+                "description": "Desenvolvimento de UI baseado em componentes com hooks, context, custom hooks e técnicas de otimização de performance para aplicações web modernas."
+            },
+            "vuejs": {
+                "name": "Vue.js",
+                "description": "Framework progressivo com arquitetura de componentes, gerenciamento de estado Vuex, Vue Router e data binding reativo para UIs interativas."
+            },
+            "angular": {
+                "name": "Angular",
+                "description": "Framework completo com arquitetura baseada em componentes, services, injeção de dependência e integração TypeScript para aplicações empresariais."
+            },
+            "nestjs": {
+                "name": "NestJS",
+                "description": "Framework Node.js com arquitetura modular, injeção de dependência, decorators e suporte TypeScript para aplicações server-side escaláveis."
+            },
+            "entityframework": {
+                "name": "Entity Framework",
+                "description": "Mapeamento objeto-relacional com abordagem code-first, migrations, queries LINQ e integração perfeita com banco de dados para aplicações .NET."
+            },
+            "mongodb": {
+                "name": "MongoDB",
+                "description": "Banco de dados NoSQL de documentos com pipelines de agregação, estratégias de indexação e design de schema flexível para aplicações modernas."
+            },
+            "postgresql": {
+                "name": "PostgreSQL",
+                "description": "Banco de dados relacional avançado com queries complexas, suporte JSON, tuning de performance e conformidade ACID robusta para aplicações empresariais."
+            },
+            "mssql": {
+                "name": "SQL Server",
+                "description": "Microsoft SQL Server com T-SQL, stored procedures, triggers e otimização de performance para soluções empresariais baseadas em Windows."
+            },
+            "prisma": {
+                "name": "Prisma ORM",
+                "description": "Toolkit de banco de dados type-safe com cliente auto-gerado, migrations de banco de dados e modelagem intuitiva para workflows de desenvolvimento modernos."
+            },
+            "git": {
+                "name": "Git",
+                "description": "Controle de versão distribuído com estratégias avançadas de branching, workflows colaborativos e gestão de repositórios para desenvolvimento em equipe."
+            },
+            "docker": {
+                "name": "Docker",
+                "description": "Tecnologia de containerização para criar aplicações portáveis, orquestração multi-container e Docker Compose para ambientes de desenvolvimento."
+            },
+            "cicd": {
+                "name": "CI/CD",
+                "description": "Integração e deploy contínuos com testes automatizados, pipelines de deployment, GitLab CI e GitHub Actions para desenvolvimento otimizado."
+            },
+            "azure": {
+                "name": "Azure",
+                "description": "Plataforma de nuvem Microsoft com App Service, Azure Functions, Azure DevOps e diversos serviços cloud para deploy escalável de aplicações."
+            },
+            "linux": {
+                "name": "Linux",
+                "description": "Administração de sistema operacional Unix-like, scripting bash, configuração de serviços e gestão de servidores para ambientes de produção."
+            },
+            "vim": {
+                "name": "Vim",
+                "description": "Editor de texto avançado com configurações customizadas, macros, plugins e edição eficiente por teclado para produtividade aprimorada."
+            }
+        },
+        "projectDescriptions": {
+            "socialSecurity": {
+                "name": "Sistema de Gestão Previdenciária",
+                "description": "Sistema completo para gestão de pensões e benefícios com arquitetura moderna"
+            },
+            "recertification": {
+                "name": "Sistema de Recertificação Online",
+                "description": "Plataforma web para processamento e verificação de recertificações com autenticação segura"
+            },
+            "chatbot": {
+                "name": "Sistema de Chatbot",
+                "description": "Sistema de comunicação automatizada com integração e automação de workflows"
+            }
+        },
+        "interests": [
+            "Desenvolvimento Full Stack",
+            "Arquitetura de Software",
+            "Otimização de Performance",
+            "Inovação Técnica",
+            "Desenvolvimento Back-End",
+            "Desenvolvimento Front-End",
+            "DevOps",
+            "Desenvolvimento Orientado a Testes",
+            "Arquitetura CQRS",
+            "Padrão BFF"
+        ]
+    }
+}

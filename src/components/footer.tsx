@@ -4,9 +4,11 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import { getInfo } from '@/info/info'
+import { useTranslations } from '@/hooks/useTranslations'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const { t } = useTranslations()
 
   const socialLinks = [
     {
@@ -24,6 +26,14 @@ export default function Footer() {
       href: getInfo().mailto,
       label: 'Email',
     },
+  ]
+
+  const navItems = [
+    { name: t("navigation.home"), path: "/" },
+    { name: t("navigation.about"), path: "/#about" },
+    { name: t("navigation.projects"), path: "/#projects" },
+    { name: t("navigation.skills"), path: "/#skills" },
+    { name: t("navigation.contact"), path: "/#contact" },
   ]
 
   const container = {
@@ -52,9 +62,9 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-3"
           >
-            <h3 className="text-lg font-semibold">Portfolio</h3>
+            <h3 className="text-lg font-semibold">{t("footer.portfolio.title")}</h3>
             <p className="text-sm text-muted-foreground">
-              A showcase of my projects and skills as a developer.
+              {t("footer.portfolio.description")}
             </p>
           </motion.div>
 
@@ -65,15 +75,15 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-3"
           >
-            <h3 className="text-lg font-semibold">Links</h3>
+            <h3 className="text-lg font-semibold">{t("footer.links.title")}</h3>
             <ul className="space-y-2">
-              {['Home', 'About', 'Projects', 'Skills', 'Contact'].map(item => (
-                <li key={item}>
+              {navItems.map((navItem) => (
+                <li key={navItem.name as string}>
                   <Link
-                    href={`/#${item.toLowerCase()}`}
+                    href={navItem.path}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    {item}
+                    {navItem.name}
                   </Link>
                 </li>
               ))}
@@ -87,10 +97,10 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-3"
           >
-            <h3 className="text-lg font-semibold">Contact</h3>
+            <h3 className="text-lg font-semibold">{t("footer.contact.title")}</h3>
             <address className="not-italic text-sm text-muted-foreground space-y-2">
-              <p>dev.caugustoaf@gmail.com</p>
-              <p>(65) 9 9256-0242</p>
+              <p>{t("footer.contact.email")}</p>
+              <p>{t("footer.contact.phone")}</p>
             </address>
           </motion.div>
 
@@ -101,7 +111,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="space-y-3"
           >
-            <h3 className="text-lg font-semibold">Social</h3>
+            <h3 className="text-lg font-semibold">{t("footer.social.title")}</h3>
             <motion.div
               variants={container}
               initial="hidden"
@@ -133,7 +143,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground"
         >
-          <p>&copy; {currentYear} Portfolio. All rights reserved.</p>
+          <p>&copy; {currentYear} {t("navigation.portfolio")}. {t("footer.copyright")}</p>
         </motion.div>
       </div>
     </footer>

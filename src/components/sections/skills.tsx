@@ -28,147 +28,109 @@ import {
 const skillCategories = [
   {
     category: 'Languages',
+    translationKey: 'languages',
     icon: <LucideCode className="h-8 w-8" />,
-    description: "Programming languages I've mastered",
     color: 'from-blue-500 to-cyan-500',
     items: [
       {
-        name: 'JavaScript',
+        translationKey: 'javascript',
         icon: 'icon-[devicon--javascript]',
-        description:
-          'Modern ES6+, async programming, functional concepts, and advanced JavaScript patterns for building dynamic web applications.',
       },
       {
-        name: 'TypeScript',
+        translationKey: 'typescript',
         icon: 'icon-[devicon--typescript]',
-        description:
-          'Type-safe development with interfaces, generics, utility types, and advanced TypeScript features for scalable applications.',
       },
       {
-        name: 'C#',
+        translationKey: 'csharp',
         icon: 'icon-[devicon--csharp]',
-        description:
-          'Object-oriented programming, LINQ, async/await patterns, and .NET ecosystem for robust backend development.',
       },
       {
-        name: 'SQL',
+        translationKey: 'sql',
         icon: 'icon-[devicon--sqldeveloper]',
-        description:
-          'Complex queries, joins, stored procedures, database optimization, and performance tuning for efficient data management.',
       },
     ],
   },
   {
-    category: 'Frameworks',
+    category: 'Frontend',
+    translationKey: 'frontend',
     icon: <LucideFramer className="h-8 w-8 " />,
-    description: 'Libraries and frameworks I build with',
     color: 'from-green-500 to-emerald-500',
     items: [
       {
-        name: 'React',
+        translationKey: 'react',
         icon: 'icon-[devicon--react]',
-        description:
-          'Component-based UI development with hooks, context, custom hooks, and performance optimization techniques for modern web applications.',
       },
       {
-        name: 'VueJS',
+        translationKey: 'vuejs',
         icon: 'icon-[devicon--vuejs]',
-        description:
-          'Progressive framework with component architecture, Vuex state management, Vue Router, and reactive data binding for interactive UIs.',
       },
       {
-        name: 'AngularJS',
+        translationKey: 'angular',
         icon: 'icon-[devicon--angularjs]',
-        description:
-          'Full-featured framework with component-based architecture, services, dependency injection, and TypeScript integration for enterprise applications.',
       },
       {
-        name: 'NestJS',
+        translationKey: 'nestjs',
         icon: 'icon-[devicon--nestjs]',
-        description:
-          'Node.js framework with modular architecture, dependency injection, decorators, and TypeScript support for scalable server-side applications.',
       },
       {
-        name: 'Entity Framework',
+        translationKey: 'entityframework',
         icon: 'icon-[devicon--dotnetcore]',
-        description:
-          'Object-relational mapping with code-first approach, migrations, LINQ queries, and seamless database integration for .NET applications.',
       },
     ],
   },
   {
-    category: 'Tools & Platforms',
-    icon: <LucideZap className="h-8 w-8 " />,
-    description: 'Tools that power my development workflow',
-    color: 'from-purple-500 to-pink-500',
-    items: [
-      {
-        name: 'Git',
-        icon: 'icon-[devicon--git]',
-        description:
-          'Distributed version control with advanced branching strategies, collaborative workflows, and repository management for team development.',
-      },
-      {
-        name: 'Docker',
-        icon: 'icon-[devicon--docker]',
-        description:
-          'Containerization technology for creating portable applications, multi-container orchestration, and Docker Compose for development environments.',
-      },
-      {
-        name: 'CI/CD',
-        icon: 'icon-[devicon--azuredevops]',
-        description:
-          'Continuous integration and deployment with automated testing, deployment pipelines, GitLab CI, and GitHub Actions for streamlined development.',
-      },
-      {
-        name: 'Azure',
-        icon: 'icon-[devicon--azure]',
-        description:
-          'Microsoft cloud platform with App Service, Azure Functions, Azure DevOps, and various cloud services for scalable application deployment.',
-      },
-      {
-        name: 'Linux',
-        icon: 'icon-[devicon--linux]',
-        description:
-          'Unix-like operating system administration, bash scripting, service configuration, and server management for production environments.',
-      },
-      {
-        name: 'Vim',
-        icon: 'icon-[devicon--vim]',
-        description:
-          'Advanced text editor with custom configurations, macros, plugins, and efficient keyboard-driven editing for enhanced productivity.',
-      },
-    ],
-  },
-  {
-    category: 'Databases',
+    category: 'Backend',
+    translationKey: 'backend',
     icon: <LucideDatabase className="h-8 w-8 " />,
-    description: "Database systems I'm proficient with",
     color: 'from-orange-500 to-red-500',
     items: [
       {
-        name: 'MongoDB',
+        translationKey: 'mongodb',
         icon: 'icon-[devicon--mongodb]',
-        description:
-          'NoSQL document database with aggregation pipelines, indexing strategies, and flexible schema design for modern applications.',
       },
       {
-        name: 'PostgreSQL',
+        translationKey: 'postgresql',
         icon: 'icon-[devicon--postgresql]',
-        description:
-          'Advanced relational database with complex queries, JSON support, performance tuning, and robust ACID compliance for enterprise applications.',
       },
       {
-        name: 'MSSQL',
+        translationKey: 'mssql',
         icon: 'icon-[devicon--microsoftsqlserver-wordmark]',
-        description:
-          'Microsoft SQL Server with T-SQL, stored procedures, triggers, and performance optimization for Windows-based enterprise solutions.',
       },
       {
-        name: 'Prisma ORM',
+        translationKey: 'prisma',
         icon: 'icon-[devicon--prisma]',
-        description:
-          'Type-safe database toolkit with auto-generated client, database migrations, and intuitive data modeling for modern development workflows.',
+      },
+    ],
+  },
+  {
+    category: 'Tools & DevOps',
+    translationKey: 'tools',
+    icon: <LucideZap className="h-8 w-8 " />,
+    color: 'from-purple-500 to-pink-500',
+    items: [
+      {
+        translationKey: 'git',
+        icon: 'icon-[devicon--git]',
+      },
+      {
+        translationKey: 'docker',
+        icon: 'icon-[devicon--docker]',
+      },
+      {
+        translationKey: 'cicd',
+        icon: 'icon-[devicon--azuredevops]',
+      },
+      {
+        translationKey: 'azure',
+        icon: 'icon-[devicon--azure]',
+      },
+      {
+        translationKey: 'linux',
+        icon: 'icon-[devicon--linux]',
+      },
+      {
+        translationKey: 'vim',
+        icon: 'icon-[devicon--vim]',
       },
     ],
   },
@@ -195,9 +157,7 @@ const featuredTechnologies = [
 
 const projects = [
   {
-    name: 'Social Security Management System',
-    description:
-      'A comprehensive system for managing pension and benefits using modern architecture',
+    name: 'socialSecurity',
     technologies: [
       'React',
       '.NET 9',
@@ -209,30 +169,13 @@ const projects = [
     ],
   },
   {
-    name: 'Online Registrant Recertification System',
-    description:
-      'Web platform for processing and verifying user recertifications with secure authentication',
+    name: 'recertification',
     technologies: ['Vue.js', 'NestJS', 'MongoDB', 'Prisma ORM'],
   },
   {
-    name: 'Chatbot System',
-    description:
-      'Automated communication system with integration capabilities and workflow automation',
+    name: 'chatbot',
     technologies: ['Chatwoot', 'EvolutionAPI', 'N8N', 'Typebot', 'Docker'],
   },
-]
-
-const interests = [
-  'Full Stack Development',
-  'Software Architecture',
-  'Performance Optimization',
-  'Technical Innovation',
-  'Back-End Development',
-  'Front-End Development',
-  'DevOps',
-  'Test-Driven Development',
-  'CQRS Architecture',
-  'BFF Pattern',
 ]
 
 export default function Skills() {
@@ -318,10 +261,10 @@ export default function Skills() {
             <div className="text-center">
               <h3 className="text-2xl font-bold mb-2 flex items-center justify-center gap-2">
                 <LucideRocket className="h-6 w-6 text-primary" />
-                Featured Technologies
+                {t('skills.featuredTechnologies.title')}
               </h3>
               <p className="text-muted-foreground">
-                Technologies I work with daily
+                {t('skills.featuredTechnologies.subtitle')}
               </p>
             </div>
 
@@ -367,10 +310,10 @@ export default function Skills() {
             <motion.div variants={itemVariants} className="text-center">
               <h3 className="text-3xl font-bold mb-2 flex items-center justify-center gap-2">
                 <LucideGraduationCap className="h-7 w-7 text-primary" />
-                Technical Skills
+                {t('skills.technicalSkills.title')}
               </h3>
               <p className="text-muted-foreground">
-                Detailed breakdown of my technical expertise
+                {t('skills.technicalSkills.subtitle')}
               </p>
             </motion.div>
 
@@ -398,7 +341,6 @@ export default function Skills() {
                     }`}
                 >
                   <span
-                    color="black"
                     className={
                       activeCategory === category.category
                         ? 'text-primary-foreground '
@@ -407,7 +349,9 @@ export default function Skills() {
                   >
                     {category.icon}
                   </span>
-                  <span>{category.category}</span>
+                  <span>
+                    {t(`skills.categories.${category.translationKey}.title`)}
+                  </span>
                 </motion.button>
               ))}
             </motion.div>
@@ -441,18 +385,22 @@ export default function Skills() {
                         <div className="flex items-center gap-3">
                           {skillGroup.icon}
                           <CardTitle className="text-xl">
-                            {skillGroup.category}
+                            {t(
+                              `skills.categories.${skillGroup.translationKey}.title`,
+                            )}
                           </CardTitle>
                         </div>
                         <p className="text-sm text-muted-foreground mt-2">
-                          {skillGroup.description}
+                          {t(
+                            `skills.categories.${skillGroup.translationKey}.description`,
+                          )}
                         </p>
                       </CardHeader>
 
                       <CardContent className="space-y-4">
                         {skillGroup.items.map((skill, index) => (
                           <motion.div
-                            key={skill.name}
+                            key={skill.translationKey}
                             initial={{ opacity: 0 }}
                             animate={{
                               opacity: 1,
@@ -471,7 +419,7 @@ export default function Skills() {
                                 : undefined
                             }
                             onHoverStart={() =>
-                              !isMobile && setHoveredSkill(skill.name)
+                              !isMobile && setHoveredSkill(skill.translationKey)
                             }
                             onHoverEnd={() =>
                               !isMobile && setHoveredSkill(null)
@@ -484,22 +432,28 @@ export default function Skills() {
                                   <span className={`${skill.icon} text-2xl`} />
                                 ) : (
                                   <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-sm font-bold">
-                                    {skill.name.charAt(0)}
+                                    {t(
+                                      `skills.items.${skill.translationKey}.name`,
+                                    ).charAt(0)}
                                   </div>
                                 )}
                               </div>
                               <div className="flex-1 min-w-0">
                                 <h4 className="font-semibold text-lg mb-2">
-                                  {skill.name}
+                                  {t(
+                                    `skills.items.${skill.translationKey}.name`,
+                                  )}
                                 </h4>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
-                                  {skill.description}
+                                  {t(
+                                    `skills.items.${skill.translationKey}.description`,
+                                  )}
                                 </p>
                               </div>
                             </div>
 
                             <AnimatePresence>
-                              {hoveredSkill === skill.name && (
+                              {hoveredSkill === skill.translationKey && (
                                 <motion.div
                                   initial={{ opacity: 0, scale: 0.95 }}
                                   animate={{ opacity: 1, scale: 1 }}
@@ -523,10 +477,10 @@ export default function Skills() {
             <div className="text-center">
               <h3 className="text-3xl font-bold mb-2 flex items-center justify-center gap-2">
                 <LucideStar className="h-7 w-7 text-primary" />
-                Project Experience
+                {t('skills.projectExperience.title')}
               </h3>
               <p className="text-muted-foreground">
-                Real-world applications of my skills
+                {t('skills.projectExperience.subtitle')}
               </p>
             </div>
 
@@ -552,10 +506,14 @@ export default function Skills() {
                         <div className="h-3 bg-gradient-to-r from-primary via-primary/80 to-primary/60"></div>
                         <CardHeader className="pb-4">
                           <CardTitle className="text-xl leading-tight">
-                            {project.name}
+                            {t(
+                              `skills.projectDescriptions.${project.name}.name`,
+                            )}
                           </CardTitle>
                           <p className="text-sm text-muted-foreground leading-relaxed">
-                            {project.description}
+                            {t(
+                              `skills.projectDescriptions.${project.name}.description`,
+                            )}
                           </p>
                         </CardHeader>
                         <CardContent>
@@ -583,36 +541,40 @@ export default function Skills() {
 
           <motion.div variants={itemVariants} className="space-y-8">
             <div className="text-center">
-              <h3 className="text-3xl font-bold mb-2">Areas of Interest</h3>
+              <h3 className="text-3xl font-bold mb-2">
+                {t('skills.areasOfInterest.title')}
+              </h3>
               <p className="text-muted-foreground">
-                Technologies and concepts I&apos;m passionate about
+                {t('skills.areasOfInterest.subtitle')}
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-              {interests.map((interest, index) => (
-                <motion.div
-                  key={interest}
-                  variants={itemVariants}
-                  whileHover={{
-                    scale: 1.1,
-                    boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
-                    backgroundColor: 'var(--primary)',
-                    color: 'var(--primary-foreground)',
-                    y: -5,
-                  }}
-                  custom={index}
-                  drag
-                  dragConstraints={{
-                    left: -100,
-                    right: 100,
-                    top: -100,
-                    bottom: 100,
-                  }}
-                  className="px-5 py-3 bg-background/50 backdrop-blur-sm rounded-full text-sm font-medium border-2 border-border hover:border-primary cursor-grab active:cursor-grabbing transition-all duration-300"
-                >
-                  {interest}
-                </motion.div>
-              ))}
+              {(t('skills.interests') as string[]).map(
+                (interest: string, index: number) => (
+                  <motion.div
+                    key={interest}
+                    variants={itemVariants}
+                    whileHover={{
+                      scale: 1.1,
+                      boxShadow: '0 15px 30px rgba(0,0,0,0.15)',
+                      backgroundColor: 'var(--primary)',
+                      color: 'var(--primary-foreground)',
+                      y: -5,
+                    }}
+                    custom={index}
+                    drag
+                    dragConstraints={{
+                      left: -100,
+                      right: 100,
+                      top: -100,
+                      bottom: 100,
+                    }}
+                    className="px-5 py-3 bg-background/50 backdrop-blur-sm rounded-full text-sm font-medium border-2 border-border hover:border-primary cursor-grab active:cursor-grabbing transition-all duration-300"
+                  >
+                    {interest}
+                  </motion.div>
+                ),
+              )}
             </div>
           </motion.div>
 
@@ -627,12 +589,10 @@ export default function Skills() {
 
             <div className="relative z-10">
               <h3 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                Let&apos;s Build Something Amazing Together
+                {t('skills.callToAction.title')}
               </h3>
               <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
-                My diverse skill set and experience enable me to tackle complex
-                problems and deliver elegant solutions. I&apos;m always looking
-                for new challenges and opportunities to expand my expertise.
+                {t('skills.callToAction.description')}
               </p>
               <motion.button
                 whileHover={{
@@ -642,7 +602,7 @@ export default function Skills() {
                 whileTap={{ scale: 0.98 }}
                 className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Get in Touch
+                {t('skills.callToAction.button')}
               </motion.button>
             </div>
           </motion.div>

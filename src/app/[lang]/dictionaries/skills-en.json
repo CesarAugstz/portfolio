@@ -1,0 +1,149 @@
+{
+    "skills": {
+        "title": "Skills & Expertise",
+        "subtitle": "I've developed a diverse set of skills throughout my career in both front-end and back-end development. My technical toolkit enables me to build robust, scalable, and elegant solutions.",
+        "featuredTechnologies": {
+            "title": "Featured Technologies",
+            "subtitle": "Technologies I work with daily"
+        },
+        "technicalSkills": {
+            "title": "Technical Skills",
+            "subtitle": "Detailed breakdown of my technical expertise"
+        },
+        "projectExperience": {
+            "title": "Project Experience",
+            "subtitle": "Real-world applications of my skills"
+        },
+        "areasOfInterest": {
+            "title": "Areas of Interest",
+            "subtitle": "Technologies and concepts I'm passionate about"
+        },
+        "callToAction": {
+            "title": "Let's Build Something Extraordinary Together",
+            "description": "My comprehensive skill set and proven experience enable me to tackle complex challenges and deliver exceptional solutions. I'm passionate about taking on new opportunities that push the boundaries of innovation.",
+            "button": "Start a Conversation"
+        },
+        "categories": {
+            "languages": {
+                "title": "Languages",
+                "description": "Programming languages I've mastered"
+            },
+            "frontend": {
+                "title": "Frontend",
+                "description": "Modern frameworks and libraries for user interfaces"
+            },
+            "backend": {
+                "title": "Backend",
+                "description": "Server-side technologies and databases"
+            },
+            "tools": {
+                "title": "Tools & DevOps",
+                "description": "Development tools and deployment platforms"
+            }
+        },
+        "items": {
+            "javascript": {
+                "name": "JavaScript",
+                "description": "Modern ES6+, async programming, functional concepts, and advanced JavaScript patterns for building dynamic web applications."
+            },
+            "typescript": {
+                "name": "TypeScript",
+                "description": "Type-safe development with interfaces, generics, utility types, and advanced TypeScript features for scalable applications."
+            },
+            "csharp": {
+                "name": "C#",
+                "description": "Object-oriented programming, LINQ, async/await patterns, and .NET ecosystem for robust backend development."
+            },
+            "sql": {
+                "name": "SQL",
+                "description": "Complex queries, joins, stored procedures, database optimization, and performance tuning for efficient data management."
+            },
+            "react": {
+                "name": "React",
+                "description": "Component-based UI development with hooks, context, custom hooks, and performance optimization techniques for modern web applications."
+            },
+            "vuejs": {
+                "name": "Vue.js",
+                "description": "Progressive framework with component architecture, Vuex state management, Vue Router, and reactive data binding for interactive UIs."
+            },
+            "angular": {
+                "name": "Angular",
+                "description": "Full-featured framework with component-based architecture, services, dependency injection, and TypeScript integration for enterprise applications."
+            },
+            "nestjs": {
+                "name": "NestJS",
+                "description": "Node.js framework with modular architecture, dependency injection, decorators, and TypeScript support for scalable server-side applications."
+            },
+            "entityframework": {
+                "name": "Entity Framework",
+                "description": "Object-relational mapping with code-first approach, migrations, LINQ queries, and seamless database integration for .NET applications."
+            },
+            "mongodb": {
+                "name": "MongoDB",
+                "description": "NoSQL document database with aggregation pipelines, indexing strategies, and flexible schema design for modern applications."
+            },
+            "postgresql": {
+                "name": "PostgreSQL",
+                "description": "Advanced relational database with complex queries, JSON support, performance tuning, and robust ACID compliance for enterprise applications."
+            },
+            "mssql": {
+                "name": "SQL Server",
+                "description": "Microsoft SQL Server with T-SQL, stored procedures, triggers, and performance optimization for Windows-based enterprise solutions."
+            },
+            "prisma": {
+                "name": "Prisma ORM",
+                "description": "Type-safe database toolkit with auto-generated client, database migrations, and intuitive data modeling for modern development workflows."
+            },
+            "git": {
+                "name": "Git",
+                "description": "Distributed version control with advanced branching strategies, collaborative workflows, and repository management for team development."
+            },
+            "docker": {
+                "name": "Docker",
+                "description": "Containerization technology for creating portable applications, multi-container orchestration, and Docker Compose for development environments."
+            },
+            "cicd": {
+                "name": "CI/CD",
+                "description": "Continuous integration and deployment with automated testing, deployment pipelines, GitLab CI, and GitHub Actions for streamlined development."
+            },
+            "azure": {
+                "name": "Azure",
+                "description": "Microsoft cloud platform with App Service, Azure Functions, Azure DevOps, and various cloud services for scalable application deployment."
+            },
+            "linux": {
+                "name": "Linux",
+                "description": "Unix-like operating system administration, bash scripting, service configuration, and server management for production environments."
+            },
+            "vim": {
+                "name": "Vim",
+                "description": "Advanced text editor with custom configurations, macros, plugins, and efficient keyboard-driven editing for enhanced productivity."
+            }
+        },
+        "projectDescriptions": {
+            "socialSecurity": {
+                "name": "Social Security Management System",
+                "description": "A comprehensive system for managing pension and benefits using modern architecture"
+            },
+            "recertification": {
+                "name": "Online Registrant Recertification System",
+                "description": "Web platform for processing and verifying user recertifications with secure authentication"
+            },
+            "chatbot": {
+                "name": "Chatbot System",
+                "description": "Automated communication system with integration capabilities and workflow automation"
+            }
+        },
+        "interests": [
+            "Full Stack Development",
+            "Software Architecture",
+            "Performance Optimization",
+            "Technical Innovation",
+            "Back-End Development",
+            "Front-End Development",
+            "DevOps",
+            "Test-Driven Development",
+            "CQRS Architecture",
+            "BFF Pattern"
+        ]
+    }
+}
