@@ -7,9 +7,7 @@ export function detectLanguageFromBrowser(): Lang {
 
   const browserLang = navigator.language || navigator.languages?.[0] || 'en-US'
 
-  if (browserLang.startsWith('pt')) {
-    return 'pt-BR'
-  }
+  if (browserLang.startsWith('pt')) return 'pt-BR'
 
   return 'en-US'
 }
@@ -21,9 +19,7 @@ export function getLanguageFromURL(): Lang | null {
   const segments = path.split('/')
   const langSegment = segments[1]
 
-  if (isValidLang(langSegment)) {
-    return langSegment
-  }
+  if (isValidLang(langSegment)) return langSegment
 
   return null
 }

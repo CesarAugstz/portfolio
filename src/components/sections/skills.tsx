@@ -549,7 +549,7 @@ export default function Skills() {
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-              {(t('skills.interests') as string[]).map(
+              {(t('skills.interests') as unknown as string[]).map(
                 (interest: string, index: number) => (
                   <motion.div
                     key={interest}

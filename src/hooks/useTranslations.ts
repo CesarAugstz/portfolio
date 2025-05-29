@@ -8,7 +8,7 @@ export function useTranslations() {
   const [lang] = useAtom(langAtom)
   const dict = getTranslations(lang)
 
-  const t = (path: string): string | string[] => {
+  const t = (path: string): string => {
     return getNestedTranslation(dict, path)
   }
 

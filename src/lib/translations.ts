@@ -16,10 +16,7 @@ export function getTranslations(lang: Lang): Dictionary {
   return translations[lang] || translations['en-US']
 }
 
-export function getNestedTranslation(
-  dict: Dictionary,
-  path: string,
-): string | string[] {
+export function getNestedTranslation(dict: Dictionary, path: string): string {
   const keys = path.split('.')
   let current: any = dict
 

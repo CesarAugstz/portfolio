@@ -47,14 +47,6 @@ export default function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500))
-
-    //toast({
-    //  title: "Message sent!",
-    //  description: "Thank you for your message. I'll get back to you soon.",
-    //})
-
     setIsSubmitting(false)
     ;(e.target as HTMLFormElement).reset()
   }
@@ -76,9 +68,7 @@ export default function Contact() {
             <h2 className="text-3xl font-bold tracking-tight mb-4">
               {t('contact.title')}
             </h2>
-            <p className="text-muted-foreground">
-              {t('contact.subtitle')}
-            </p>
+            <p className="text-muted-foreground">{t('contact.subtitle')}</p>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8">
@@ -95,7 +85,11 @@ export default function Contact() {
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name">{t('contact.form.name')}</Label>
-                        <Input id="name" placeholder={t('contact.form.namePlaceholder')} required />
+                        <Input
+                          id="name"
+                          placeholder={t('contact.form.namePlaceholder')}
+                          required
+                        />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">{t('contact.form.email')}</Label>
@@ -108,11 +102,19 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="subject">{t('contact.form.subject')}</Label>
-                      <Input id="subject" placeholder={t('contact.form.subjectPlaceholder')} required />
+                      <Label htmlFor="subject">
+                        {t('contact.form.subject')}
+                      </Label>
+                      <Input
+                        id="subject"
+                        placeholder={t('contact.form.subjectPlaceholder')}
+                        required
+                      />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="message">{t('contact.form.message')}</Label>
+                      <Label htmlFor="message">
+                        {t('contact.form.message')}
+                      </Label>
                       <Textarea
                         id="message"
                         placeholder={t('contact.form.messagePlaceholder')}
@@ -129,7 +131,8 @@ export default function Contact() {
                         <>{t('contact.form.sending')}</>
                       ) : (
                         <>
-                          <Send className="mr-2 h-4 w-4" /> {t('contact.form.sendMessage')}
+                          <Send className="mr-2 h-4 w-4" />{' '}
+                          {t('contact.form.sendMessage')}
                         </>
                       )}
                     </Button>
@@ -174,7 +177,9 @@ export default function Contact() {
                   <div className="flex items-start space-x-3">
                     <MapPin className="h-5 w-5 mt-0.5 text-muted-foreground" />
                     <div>
-                      <p className="font-medium">{t('contact.info.location')}</p>
+                      <p className="font-medium">
+                        {t('contact.info.location')}
+                      </p>
                       <p className="text-sm text-muted-foreground">
                         {t('contact.info.locationValue')}
                       </p>
