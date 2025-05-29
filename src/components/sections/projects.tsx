@@ -23,6 +23,7 @@ import {
 import { ExternalLink, Github, Lightbulb } from 'lucide-react'
 import Link from 'next/link'
 import { getInfo } from '@/info/info'
+import { useTranslations } from '@/hooks/useTranslations'
 
 const technologyIcons: Record<string, string> = {
   React: 'icon-[devicon--react]',
@@ -106,6 +107,7 @@ const projects = [
 export default function Projects() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
+  const { t } = useTranslations()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -171,12 +173,10 @@ export default function Projects() {
               <Lightbulb className="h-8 w-8 text-primary" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Featured Projects
+              {t('projects.title')}
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Explore my portfolio of innovative solutions. Each project
-              represents a unique challenge solved with modern technologies,
-              thoughtful design, and attention to detail.
+              {t('projects.subtitle')}
             </p>
           </motion.div>
 
@@ -231,10 +231,10 @@ export default function Projects() {
                       <div className="flex flex-col flex-grow p-6">
                         <CardHeader className="p-0 pb-4">
                           <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300">
-                            {project.title}
+                            {project.id === 1 ? t('projects.projects.college.title') : t('projects.projects.smartDevices.title')}
                           </CardTitle>
                           <CardDescription className="text-muted-foreground leading-relaxed">
-                            {project.description}
+                            {project.id === 1 ? t('projects.projects.college.description') : t('projects.projects.smartDevices.description')}
                           </CardDescription>
                         </CardHeader>
 
@@ -277,7 +277,7 @@ export default function Projects() {
                               rel="noopener noreferrer"
                             >
                               <Github className="mr-2 h-4 w-4" />
-                              Source Code
+                              {t('projects.viewCode')}
                             </Link>
                           </Button>
                           <Button size="sm" asChild className="flex-1">
@@ -287,7 +287,7 @@ export default function Projects() {
                               rel="noopener noreferrer"
                             >
                               <ExternalLink className="mr-2 h-4 w-4" />
-                              Live Demo
+                              {t('projects.viewDemo')}
                             </Link>
                           </Button>
                         </CardFooter>
@@ -308,7 +308,7 @@ export default function Projects() {
               Interested in My Work?
             </h3>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-lg">
-              These projects represent just a glimpse of what I can create. I'm
+              These projects represent just a glimpse of what I can create. I&apos;m
               always excited to take on new challenges and bring innovative
               ideas to life. Let&apos;s collaborate on your next project!
             </p>

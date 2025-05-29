@@ -6,9 +6,11 @@ import { Button } from '@/components/ui/button'
 import { ArrowRight, Github, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 import { getInfo } from '@/info/info'
+import { useTranslations } from '@/hooks/useTranslations'
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null)
+  const { t } = useTranslations()
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -55,16 +57,16 @@ export default function Hero() {
         >
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-block px-4 py-2 text-lg font-medium rounded-full bg-primary/10 text-primary mb-4">
-              👋 Hey there!
+              {t('hero.greeting')}
             </span>
           </motion.div>
           <motion.h1
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
           >
-            I&apos;m{' '}
+          {t('hero.prename')}
             <span className="relative inline-block text-primary">
-              Cesar
+              {t('hero.name')}
               <motion.div
                 className="absolute -bottom-1 left-0 h-2 bg-primary/30 w-full rounded-full"
                 initial={{ width: 0 }}
@@ -77,10 +79,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
           >
-            A passionate frontend developer who loves creating{' '}
-            <span className="text-primary font-medium">beautiful</span>,{' '}
-            <span className="text-primary font-medium">interactive</span>, and{' '}
-            <span className="text-primary font-medium">user-friendly</span> web experiences.
+{t('hero.description')}
           </motion.p>
           <motion.div
             variants={itemVariants}
@@ -88,11 +87,11 @@ export default function Hero() {
           >
             <Button asChild size="lg">
               <Link href="#projects">
-                View Projects <ArrowRight className="ml-2 h-4 w-4" />
+{t('hero.viewProjects')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link href="#contact">Contact Me</Link>
+              <Link href="#contact">{t('hero.contactMe')}</Link>
             </Button>
           </motion.div>
           <motion.div
@@ -106,7 +105,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
               >
                 <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
+                <span className="sr-only">{t('hero.github')}</span>
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
@@ -116,7 +115,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
               >
                 <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
+                <span className="sr-only">{t('hero.linkedin')}</span>
               </Link>
             </Button>
           </motion.div>

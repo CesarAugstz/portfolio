@@ -1,5 +1,126 @@
 {
- "hero": {
-   "1": "Criando"
- }
+  "navigation": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "skills": "Habilidades",
+    "contact": "Contato",
+    "portfolio": "Portfólio"
+  },
+  "hero": {
+    "greeting": "👋 Olá!",
+    "prename": "Eu sou ", 
+    "name": "Cesar",
+    "description": "Um desenvolvedor frontend apaixonado que adora criar experiências web bonitas, interativas e amigáveis ao usuário.",
+    "beautiful": "bonitas",
+    "interactive": "interativas",
+    "userFriendly": "amigáveis ao usuário",
+    "viewProjects": "Ver Projetos",
+    "contactMe": "Entre em Contato",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "description": "Olá! Eu sou Cesar Filho, um Desenvolvedor de Software com experiência em desenvolvimento front-end e back-end. Sou especializado em React, TypeScript, C#, MongoDB e SQL, tendo contribuído para projetos estratégicos como sistemas de gestão de previdência social e Censo.",
+    "yearsExperience": "Anos de Experiência",
+    "education": "Educação",
+    "degree": "Bacharelado em Ciência da Computação",
+    "university": "Universidade Federal de Mato Grosso (UFMT) • 2020 - Presente",
+    "downloadResume": "Baixar Currículo"
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "subtitle": "Explore meu portfólio de soluções inovadoras. Cada projeto representa um desafio único resolvido com tecnologias modernas, design cuidadoso e atenção aos detalhes.",
+    "viewDemo": "Ver Demo",
+    "viewCode": "Código Fonte",
+    "projects": {
+      "college": {
+        "title": "Site da Faculdade",
+        "description": "Um site responsivo abrangente para uma faculdade com design moderno, portal do estudante, gestão de cursos e ferramentas administrativas. Construído com tecnologias de ponta para performance e experiência do usuário otimizadas."
+      },
+      "smartDevices": {
+        "title": "Gerenciador de Dispositivos Inteligentes",
+        "description": "Uma plataforma avançada de gestão IoT para controlar e monitorar dispositivos inteligentes através dos protocolos MQTT e Tuya. Possui status de dispositivos em tempo real, regras de automação e dashboard de análises abrangente."
+      }
+    }
+  },
+  "skills": {
+    "title": "Habilidades & Expertise",
+    "subtitle": "Desenvolvi um conjunto diversificado de habilidades ao longo da minha carreira em desenvolvimento front-end e back-end. Meu arsenal técnico me permite construir soluções robustas, escaláveis e elegantes.",
+    "categories": {
+      "languages": {
+        "title": "Linguagens",
+        "description": "Linguagens de programação que domino"
+      },
+      "frontend": {
+        "title": "Frontend",
+        "description": "Frameworks e bibliotecas modernas para interfaces de usuário"
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Tecnologias server-side e bancos de dados"
+      },
+      "tools": {
+        "title": "Ferramentas & DevOps",
+        "description": "Ferramentas de desenvolvimento e plataformas de deploy"
+      }
+    },
+    "featuredProjects": "Projetos em Destaque",
+    "projectDescriptions": {
+      "socialSecurity": {
+        "name": "Sistema de Gestão de Previdência Social",
+        "description": "Um sistema abrangente para gestão de pensões e benefícios usando arquitetura moderna"
+      },
+      "recertification": {
+        "name": "Sistema de Recertificação Online de Registrantes",
+        "description": "Plataforma web para processamento e verificação de recertificações de usuários com autenticação segura"
+      },
+      "chatbot": {
+        "name": "Sistema de Chatbot",
+        "description": "Sistema de comunicação automatizada com capacidades de integração e automação de fluxo de trabalho"
+      }
+    }
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Tem um projeto em mente ou quer conversar? Sinta-se à vontade para entrar em contato. Estou sempre aberto para discutir novos projetos, ideias criativas ou oportunidades para fazer parte da sua visão.",
+    "form": {
+      "title": "Enviar uma Mensagem",
+      "description": "Preencha o formulário abaixo e entrarei em contato o mais breve possível.",
+      "name": "Nome",
+      "namePlaceholder": "Seu nome",
+      "email": "Email",
+      "emailPlaceholder": "Seu email",
+      "subject": "Assunto",
+      "subjectPlaceholder": "Assunto",
+      "message": "Mensagem",
+      "messagePlaceholder": "Sua mensagem",
+      "sending": "Enviando...",
+      "sendMessage": "Enviar Mensagem"
+    },
+    "info": {
+      "title": "Informações de Contato",
+      "description": "Aqui estão as formas de entrar em contato comigo diretamente.",
+      "email": "Email",
+      "phone": "Telefone",
+      "location": "Localização",
+      "locationValue": "Cuiabá, MT, Brasil"
+    }
+  },
+  "footer": {
+    "copyright": "Todos os direitos reservados.",
+    "builtWith": "Construído com Next.js e Tailwind CSS"
+  },
+  "metadata": {
+    "home": {
+      "title": "Portfólio | Início",
+      "description": "Bem-vindo ao meu site de portfólio mostrando meu trabalho e habilidades"
+    },
+    "layout": {
+      "title": "Portfólio | Desenvolvedor Criativo",
+      "description": "Portfólio pessoal mostrando meus projetos e habilidades",
+      "keywords": "desenvolvedor, portfólio, react, next.js, desenvolvimento web"
+    }
+  }
 }

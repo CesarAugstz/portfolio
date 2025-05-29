@@ -7,19 +7,22 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
-
-const navItems = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/#about" },
-  { name: "Projects", path: "/#projects" },
-  { name: "Skills", path: "/#skills" },
-  { name: "Contact", path: "/#contact" },
-]
+import { LanguageSwitcher } from "@/components/language-switcher"
+import { useTranslations } from "@/hooks/useTranslations"
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
+  const { t } = useTranslations()
+
+  const navItems = [
+    { name: t("navigation.home"), path: "/" },
+    { name: t("navigation.about"), path: "/#about" },
+    { name: t("navigation.projects"), path: "/#projects" },
+    { name: t("navigation.skills"), path: "/#skills" },
+    { name: t("navigation.contact"), path: "/#contact" },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +48,7 @@ export default function Header() {
               transition={{ duration: 0.5 }}
               className="relative z-10"
             >
-              Portfolio
+              {t("navigation.portfolio")}
             </motion.span>
             <motion.div
               className="absolute -bottom-1 left-0 h-1 bg-primary rounded-full"
@@ -78,13 +81,16 @@ export default function Header() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
+              className="flex items-center gap-2"
             >
+              <LanguageSwitcher />
               <ThemeToggle />
             </motion.div>
           </nav>
 
           {/* Mobile Navigation Toggle */}
-          <div className="flex items-center md:hidden space-x-4">
+          <div className="flex items-center md:hidden space-x-2">
+            <LanguageSwitcher />
             <ThemeToggle />
             <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

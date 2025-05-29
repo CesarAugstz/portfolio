@@ -1,5 +1,126 @@
 {
- "hero": {
-   "1": "creating"
- }
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "portfolio": "Portfolio"
+  },
+  "hero": {
+    "greeting": "👋 Hey there!",
+    "prename": "I'm ",
+    "name": "Cesar",
+    "description": "A passionate frontend developer who loves creating beautiful, interactive, and user-friendly web experiences.",
+    "beautiful": "beautiful",
+    "interactive": "interactive",
+    "userFriendly": "user-friendly",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Hello! I'm Cesar Filho, a Software Developer with experience in both front-end and back-end development. I specialize in React, TypeScript, C#, MongoDB, and SQL, having contributed to strategic projects like social security management systems and Census.",
+    "yearsExperience": "Years Experience",
+    "education": "Education",
+    "degree": "Bachelor's in Computer Science",
+    "university": "Federal University of Mato Grosso (UFMT) • 2020 - Present",
+    "downloadResume": "Download Resume"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Explore my portfolio of innovative solutions. Each project represents a unique challenge solved with modern technologies, thoughtful design, and attention to detail.",
+    "viewDemo": "Live Demo",
+    "viewCode": "Source Code",
+    "projects": {
+      "college": {
+        "title": "College Website",
+        "description": "A comprehensive responsive website for a college featuring modern design, student portal, course management, and administrative tools. Built with cutting-edge technologies for optimal performance and user experience."
+      },
+      "smartDevices": {
+        "title": "Smart Devices Manager",
+        "description": "An advanced IoT management platform for controlling and monitoring smart devices through MQTT and Tuya protocols. Features real-time device status, automation rules, and comprehensive analytics dashboard."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "I've developed a diverse set of skills throughout my career in both front-end and back-end development. My technical toolkit enables me to build robust, scalable, and elegant solutions.",
+    "categories": {
+      "languages": {
+        "title": "Languages",
+        "description": "Programming languages I've mastered"
+      },
+      "frontend": {
+        "title": "Frontend",
+        "description": "Modern frameworks and libraries for user interfaces"
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Server-side technologies and databases"
+      },
+      "tools": {
+        "title": "Tools & DevOps",
+        "description": "Development tools and deployment platforms"
+      }
+    },
+    "featuredProjects": "Featured Projects",
+    "projectDescriptions": {
+      "socialSecurity": {
+        "name": "Social Security Management System",
+        "description": "A comprehensive system for managing pension and benefits using modern architecture"
+      },
+      "recertification": {
+        "name": "Online Registrant Recertification System",
+        "description": "Web platform for processing and verifying user recertifications with secure authentication"
+      },
+      "chatbot": {
+        "name": "Chatbot System",
+        "description": "Automated communication system with integration capabilities and workflow automation"
+      }
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind or want to chat? Feel free to reach out. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+    "form": {
+      "title": "Send a Message",
+      "description": "Fill out the form below and I'll get back to you as soon as possible.",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "Your email",
+      "subject": "Subject",
+      "subjectPlaceholder": "Subject",
+      "message": "Message",
+      "messagePlaceholder": "Your message",
+      "sending": "Sending...",
+      "sendMessage": "Send Message"
+    },
+    "info": {
+      "title": "Contact Information",
+      "description": "Here are the ways you can reach me directly.",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "locationValue": "Cuiabá, MT, Brazil"
+    }
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "builtWith": "Built with Next.js and Tailwind CSS"
+  },
+  "metadata": {
+    "home": {
+      "title": "Portfolio | Home",
+      "description": "Welcome to my portfolio website showcasing my work and skills"
+    },
+    "layout": {
+      "title": "Portfolio | Creative Developer",
+      "description": "Personal portfolio showcasing my projects and skills",
+      "keywords": "developer, portfolio, react, next.js, web development"
+    }
+  }
 }

@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useTranslations } from '@/hooks/useTranslations'
 import { useIsMobile } from '@/components/ui/use-mobile'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import {
@@ -240,6 +241,7 @@ export default function Skills() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
   const isMobile = useIsMobile()
+  const { t } = useTranslations()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -305,12 +307,10 @@ export default function Skills() {
               <LucideBrain className="h-10 w-10 text-primary" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Skills & Expertise
+              {t('skills.title')}
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I&apos;ve developed a diverse set of skills throughout my career
-              in both front-end and back-end development. My technical toolkit
-              enables me to build robust, scalable, and elegant solutions.
+              {t('skills.subtitle')}
             </p>
           </motion.div>
 

@@ -16,11 +16,13 @@ import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { useTranslations } from '@/hooks/useTranslations'
 
 export default function Contact() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const { t } = useTranslations()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -72,12 +74,10 @@ export default function Contact() {
             className="text-center max-w-2xl mx-auto"
           >
             <h2 className="text-3xl font-bold tracking-tight mb-4">
-              Get In Touch
+              {t('contact.title')}
             </h2>
             <p className="text-muted-foreground">
-              Have a project in mind or want to chat? Feel free to reach out.
-              I&apos;m always open to discussing new projects, creative ideas, or
-              opportunities to be part of your vision.
+              {t('contact.subtitle')}
             </p>
           </motion.div>
 
@@ -85,38 +85,37 @@ export default function Contact() {
             <motion.div variants={itemVariants} className="lg:col-span-2">
               <Card>
                 <CardHeader>
-                  <CardTitle>Send a Message</CardTitle>
+                  <CardTitle>{t('contact.form.title')}</CardTitle>
                   <CardDescription>
-                    Fill out the form below and I&apos;ll get back to you as soon as
-                    possible.
+                    {t('contact.form.description')}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="name">Name</Label>
-                        <Input id="name" placeholder="Your name" required />
+                        <Label htmlFor="name">{t('contact.form.name')}</Label>
+                        <Input id="name" placeholder={t('contact.form.namePlaceholder')} required />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
+                        <Label htmlFor="email">{t('contact.form.email')}</Label>
                         <Input
                           id="email"
                           type="email"
-                          placeholder="Your email"
+                          placeholder={t('contact.form.emailPlaceholder')}
                           required
                         />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="subject">Subject</Label>
-                      <Input id="subject" placeholder="Subject" required />
+                      <Label htmlFor="subject">{t('contact.form.subject')}</Label>
+                      <Input id="subject" placeholder={t('contact.form.subjectPlaceholder')} required />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="message">Message</Label>
+                      <Label htmlFor="message">{t('contact.form.message')}</Label>
                       <Textarea
                         id="message"
-                        placeholder="Your message"
+                        placeholder={t('contact.form.messagePlaceholder')}
                         rows={5}
                         required
                       />
@@ -127,10 +126,10 @@ export default function Contact() {
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
-                        <>Sending...</>
+                        <>{t('contact.form.sending')}</>
                       ) : (
                         <>
-                          <Send className="mr-2 h-4 w-4" /> Send Message
+                          <Send className="mr-2 h-4 w-4" /> {t('contact.form.sendMessage')}
                         </>
                       )}
                     </Button>
@@ -142,16 +141,16 @@ export default function Contact() {
             <motion.div variants={itemVariants} className="space-y-6">
               <Card className="h-full">
                 <CardHeader>
-                  <CardTitle>Contact Information</CardTitle>
+                  <CardTitle>{t('contact.info.title')}</CardTitle>
                   <CardDescription>
-                    Here are the ways you can reach me directly.
+                    {t('contact.info.description')}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <Mail className="h-5 w-5 mt-0.5 text-muted-foreground" />
                     <div>
-                      <p className="font-medium">Email</p>
+                      <p className="font-medium">{t('contact.info.email')}</p>
                       <a
                         href="mailto:dev.caugustoaf@gmail.com"
                         className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -163,7 +162,7 @@ export default function Contact() {
                   <div className="flex items-start space-x-3">
                     <Phone className="h-5 w-5 mt-0.5 text-muted-foreground" />
                     <div>
-                      <p className="font-medium">Phone</p>
+                      <p className="font-medium">{t('contact.info.phone')}</p>
                       <a
                         href="tel:+5565992560242"
                         className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -175,9 +174,9 @@ export default function Contact() {
                   <div className="flex items-start space-x-3">
                     <MapPin className="h-5 w-5 mt-0.5 text-muted-foreground" />
                     <div>
-                      <p className="font-medium">Location</p>
+                      <p className="font-medium">{t('contact.info.location')}</p>
                       <p className="text-sm text-muted-foreground">
-                        Cuiabá, MT, Brazil
+                        {t('contact.info.locationValue')}
                       </p>
                     </div>
                   </div>
