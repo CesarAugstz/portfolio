@@ -8,8 +8,16 @@ import { Globe } from 'lucide-react'
 import { useCallback } from 'react'
 
 const languages = [
-  { code: 'en-US' as Lang, name: 'English', flag: '🇺🇸' },
-  { code: 'pt-BR' as Lang, name: 'Português', flag: '🇧🇷' },
+  {
+    code: 'en-US' as Lang,
+    name: 'English',
+    flag: 'icon-[emojione--flag-for-united-states]',
+  },
+  {
+    code: 'pt-BR' as Lang,
+    name: 'Português',
+    flag: 'icon-[emojione--flag-for-brazil]',
+  },
 ]
 
 export function LanguageSwitcher() {
@@ -39,8 +47,9 @@ export function LanguageSwitcher() {
       className="flex items-center gap-2"
     >
       <Globe className="h-4 w-4" />
-      <span className="hidden sm:inline">
-        {otherLanguage?.flag} {otherLanguage?.name}
+      <span className="hidden sm:flex gap-2 items-center">
+        <span className={otherLanguage?.flag} />
+        {otherLanguage?.name}
       </span>
       <span className="sm:hidden">{otherLanguage?.flag}</span>
     </Button>

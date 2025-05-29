@@ -68,6 +68,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@iconify-json/devicon": "^1.2.24",
+    "@iconify-json/emojione": "^1.2.1",
     "@iconify-json/simple-icons": "^1.2.36",
     "@iconify/tailwind4": "^1.0.6",
     "@next/eslint-plugin-next": "^15.3.0",

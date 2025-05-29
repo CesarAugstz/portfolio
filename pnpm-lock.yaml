@@ -174,6 +174,9 @@ importers:
       '@iconify-json/devicon':
         specifier: ^1.2.24
         version: 1.2.24
+      '@iconify-json/emojione':
+        specifier: ^1.2.1
+        version: 1.2.1
       '@iconify-json/simple-icons':
         specifier: ^1.2.36
         version: 1.2.36
@@ -337,6 +340,9 @@ packages:
 
   '@iconify-json/devicon@1.2.24':
     resolution: {integrity: sha512-Y46dfXckSh04IWeV8hB/7IOkbq6H+oV+wCapz5PDx2Z4aXqGx6Fm5ZcKP9Jt9YiEhqN02Hehl4cni3Vp+xfheg==}
+
+  '@iconify-json/emojione@1.2.1':
+    resolution: {integrity: sha512-F63lXycySmeq9b/utAjb9C7dHm326dSFAFQis8j/QlVivP0zLJQWolDUiUCggpU0nEpni08w5Wx4BDk6ysbkqQ==}
 
   '@iconify-json/simple-icons@1.2.36':
     resolution: {integrity: sha512-ZMpVdoW/7hhbt2aHVSvudjH8eSVNNjKkAAjwAQHgiuPUiIfbvNakVin+H9uhUz4N9TbDT/nanzV/4Slb+6dDXw==}
@@ -3316,6 +3322,10 @@ snapshots:
   '@humanwhocodes/retry@0.4.2': {}
 
   '@iconify-json/devicon@1.2.24':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/emojione@1.2.1':
     dependencies:
       '@iconify/types': 2.0.0
 
