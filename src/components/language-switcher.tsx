@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button'
 import { langAtom, type Lang } from '@/stores/lang.store'
 import { Globe } from 'lucide-react'
 import { useCallback } from 'react'
-import { useIsMobile } from '@/hooks/use-mobile'
 
 const languages = [
   {
