@@ -88,7 +88,7 @@ export default function About() {
 
             <motion.div variants={itemVariants}>
               <h3 className="text-xl font-semibold mb-3">
-                {t('about.education')}
+                {t('about.experienceTitle')}
               </h3>
               <ul className="space-y-4">
                 <li className="border-l-2 border-primary pl-4 py-1">
@@ -109,7 +109,14 @@ export default function About() {
                     {t('about.experience.itIntern.period')}
                   </p>
                 </li>
-                <li className="border-l-2 border-muted pl-4 py-1">
+              </ul>
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <h3 className="text-xl font-semibold mb-3">
+                {t('about.education')}
+              </h3>
+              <ul className="space-y-4">
+                <li className="border-l-2 border-primary pl-4 py-1">
                   <p className="font-medium">{t('about.degree')}</p>
                   <p className="text-sm text-muted-foreground">
                     {t('about.university')}
