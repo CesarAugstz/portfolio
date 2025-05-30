@@ -24,6 +24,7 @@ import { ExternalLink, Github, Lightbulb } from 'lucide-react'
 import Link from 'next/link'
 import { getInfo } from '@/info/info'
 import { useTranslations } from '@/hooks/useTranslations'
+import { useScrollTo } from '@/hooks/use-scrollto'
 
 const technologyIcons: Record<string, string> = {
   React: 'icon-[devicon--react]',
@@ -108,6 +109,7 @@ export default function Projects() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
   const { t } = useTranslations()
+  const { scrollTo } = useScrollTo()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -339,11 +341,12 @@ export default function Projects() {
                   size="lg"
                   asChild
                   className="px-8 py-3"
+                  onClick={() => scrollTo('contact')}
                 >
-                  <Link href="#contact">
+                  <div className="flex items-center gap-2">
                     <ExternalLink className="mr-2 h-5 w-5" />
                     {t('projects.callToAction.getInTouch')}
-                  </Link>
+                  </div>
                 </Button>
               </motion.div>
             </div>

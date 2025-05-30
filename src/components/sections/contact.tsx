@@ -1,9 +1,7 @@
 'use client'
-
 import type React from 'react'
-
-import { useRef, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useMemo, useRef, useState } from 'react'
+import { motion, useInView, Variants } from 'framer-motion'
 import {
   Card,
   CardContent,
@@ -15,13 +13,24 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
-import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Loader2,
+  CheckCircle2,
+  AlertCircle,
+} from 'lucide-react'
 import { useTranslations } from '@/hooks/useTranslations'
 
 export default function Contact() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitState, setSubmitState] = useState<
+    'submitting' | 'success' | 'error' | null
+  >(null)
   const { t } = useTranslations()
 
   const containerVariants = {
@@ -44,12 +53,96 @@ export default function Contact() {
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    try {
+      e.preventDefault()
+      setSubmitState('submitting')
+      const key = process.env.NEXT_PUBLIC_FORM_APIKEY
+      const formData = new FormData(e.target as HTMLFormElement)
+      formData.append('access_key', key!)
 
-    setIsSubmitting(false)
-    ;(e.target as HTMLFormElement).reset()
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      })
+      const data = await response.json()
+      if (!data.success) throw new Error(data.message)
+      setSubmitState('success')
+      setTimeout(() => {
+        setSubmitState(null)
+      }, 3000)
+      ;(e.target as HTMLFormElement).reset()
+    } catch {
+      setSubmitState('error')
+      setTimeout(() => {
+        setSubmitState(null)
+      }, 3000)
+    }
   }
+
+  const FormInfo = useMemo(() => {
+    if (!submitState) return null
+
+    const variants: Variants = {
+      initial: { opacity: 0, y: 30, scale: 0.95 },
+      animate: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+          type: 'spring',
+          stiffness: 800,
+          damping: 70,
+        },
+      },
+      exit: {
+        opacity: 0,
+        y: -30,
+        scale: 0.95,
+        transition: { duration: 0.5 },
+      },
+    }
+
+    switch (submitState) {
+      case 'submitting':
+        return null
+      case 'success':
+        return (
+          <motion.div
+            variants={variants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="mt-4"
+          >
+            <Alert className="border-green-200 bg-green-50 dark:bg-green-950/50 dark:border-green-800">
+              <CheckCircle2 className="h-4 w-4 text-green-600" />
+              <AlertDescription className="text-green-800 dark:text-green-200 font-medium">
+                {t('contact.form.success')}
+              </AlertDescription>
+            </Alert>
+          </motion.div>
+        )
+      case 'error':
+        return (
+          <motion.div
+            variants={variants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="mt-4"
+          >
+            <Alert className="border-red-200 bg-red-50 dark:bg-red-950/50 dark:border-red-800">
+              <AlertCircle className="h-4 w-4 text-red-600" />
+              <AlertDescription className="text-red-800 dark:text-red-200 font-medium">
+                {t('contact.form.error')}
+              </AlertDescription>
+            </Alert>
+          </motion.div>
+        )
+      default:
+        return null
+    }
+  }, [submitState, t])
 
   return (
     <section id="contact" className="section-padding my-4 py-4">
@@ -70,7 +163,6 @@ export default function Contact() {
             </h2>
             <p className="text-muted-foreground">{t('contact.subtitle')}</p>
           </motion.div>
-
           <div className="grid lg:grid-cols-3 gap-8">
             <motion.div variants={itemVariants} className="lg:col-span-2">
               <Card>
@@ -87,16 +179,20 @@ export default function Contact() {
                         <Label htmlFor="name">{t('contact.form.name')}</Label>
                         <Input
                           id="name"
+                          name="name"
                           placeholder={t('contact.form.namePlaceholder')}
                           required
+                          disabled={submitState === 'submitting'}
                         />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">{t('contact.form.email')}</Label>
                         <Input
                           id="email"
+                          name="email"
                           type="email"
                           placeholder={t('contact.form.emailPlaceholder')}
+                          disabled={submitState === 'submitting'}
                           required
                         />
                       </div>
@@ -107,7 +203,9 @@ export default function Contact() {
                       </Label>
                       <Input
                         id="subject"
+                        name="subject"
                         placeholder={t('contact.form.subjectPlaceholder')}
+                        disabled={submitState === 'submitting'}
                         required
                       />
                     </div>
@@ -117,30 +215,35 @@ export default function Contact() {
                       </Label>
                       <Textarea
                         id="message"
+                        name="message"
                         placeholder={t('contact.form.messagePlaceholder')}
                         rows={5}
+                        disabled={submitState === 'submitting'}
                         required
                       />
                     </div>
                     <Button
                       type="submit"
-                      className="w-full"
-                      disabled={isSubmitting}
+                      className="w-full relative overflow-hidden group"
+                      disabled={submitState === 'submitting'}
                     >
-                      {isSubmitting ? (
-                        <>{t('contact.form.sending')}</>
+                      {submitState === 'submitting' ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          {t('contact.form.sending')}
+                        </>
                       ) : (
                         <>
-                          <Send className="mr-2 h-4 w-4" />{' '}
+                          <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
                           {t('contact.form.sendMessage')}
                         </>
                       )}
                     </Button>
+                    {FormInfo}
                   </form>
                 </CardContent>
               </Card>
             </motion.div>
-
             <motion.div variants={itemVariants} className="space-y-6">
               <Card className="h-full">
                 <CardHeader>

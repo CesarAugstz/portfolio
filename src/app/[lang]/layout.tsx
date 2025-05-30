@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next/types"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import VerticalScrollBar from "@/components/vertical-scroll-bar"
 
 export const metadata: Metadata = {
   title: "Portfolio | Cesar Filho",
@@ -16,6 +17,7 @@ export default async function LangLayout({
 }>) {
   return (
     <div className="flex min-h-screen flex-col">
+      <VerticalScrollBar />
       <Header />
       <main className="flex-1 container mx-auto">{children}</main>
       <Footer />

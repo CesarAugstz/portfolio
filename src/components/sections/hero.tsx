@@ -1,12 +1,66 @@
 'use client'
-
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Github, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 import { getInfo } from '@/info/info'
 import { useTranslations } from '@/hooks/useTranslations'
+import { useScrollTo } from '@/hooks/use-scrollto'
+
+function useHackerText(
+  text: string,
+  animationDelay: number = 0,
+  duration: number = 1000,
+) {
+  const [displayText, setDisplayText] = useState('')
+  const [isAnimating, setIsAnimating] = useState(false)
+
+  useEffect(() => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*'
+    let animationId: NodeJS.Timeout
+
+    const startAnimation = () => {
+      setIsAnimating(true)
+      let iteration = 0
+      const totalFrames = duration / 30 
+      const incrementPerFrame = text.length / totalFrames
+
+      const animate = () => {
+        setDisplayText(
+          text
+            .split('')
+            .map((char, index) => {
+              if (index < iteration) {
+                return char
+              }
+              return chars[Math.floor(Math.random() * chars.length)]
+            })
+            .join(''),
+        )
+
+        if (iteration >= text.length) {
+          setIsAnimating(false)
+          return
+        }
+
+        iteration += incrementPerFrame
+        animationId = setTimeout(animate, (iteration % 30) * 20)
+      }
+
+      animate()
+    }
+
+    const timer = setTimeout(startAnimation, animationDelay)
+
+    return () => {
+      clearTimeout(timer)
+      clearTimeout(animationId)
+    }
+  }, [text, animationDelay, duration])
+
+  return { displayText: displayText || text, isAnimating }
+}
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null)
@@ -18,6 +72,12 @@ export default function Hero() {
 
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '40%'])
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+  const { scrollTo } = useScrollTo()
+
+  const { displayText: hackerName, isAnimating } = useHackerText(
+    t('hero.name'),
+    500,
+  )
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -64,14 +124,29 @@ export default function Hero() {
             variants={itemVariants}
             className="text-4xl md:text-6xl font-bold tracking-tight mb-6"
           >
-          {t('hero.prename')}
+            {t('hero.prename')}
             <span className="relative inline-block text-primary">
-              {t('hero.name')}
+              <span
+                className={`font-mono ${isAnimating ? 'text-primary-400' : ''}`}
+              >
+                {hackerName}
+              </span>
+              {isAnimating && (
+                <motion.span
+                  className="inline-block w-0.5 h-8 md:h-12 bg-primary-400 ml-1"
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{
+                    duration: 0.8,
+                    repeat: Number.POSITIVE_INFINITY,
+                    repeatType: 'loop',
+                  }}
+                />
+              )}
               <motion.div
                 className="absolute -bottom-1 left-0 h-2 bg-primary/30 w-full rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: '100%' }}
-                transition={{ delay: 1, duration: 0.8 }}
+                transition={{ delay: 3, duration: 0.8 }}
               />
             </span>
           </motion.h1>
@@ -79,7 +154,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
           >
-{t('hero.description')}
+            {t('hero.description')}
           </motion.p>
           <motion.div
             variants={itemVariants}
@@ -87,11 +162,15 @@ export default function Hero() {
           >
             <Button asChild size="lg">
               <Link href="#projects">
-{t('hero.viewProjects')} <ArrowRight className="ml-2 h-4 w-4" />
+                {t('hero.viewProjects')} <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link href="#contact">{t('hero.contactMe')}</Link>
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => scrollTo('contact')}
+            >
+              {t('hero.contactMe')}
             </Button>
           </motion.div>
           <motion.div
@@ -121,7 +200,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </motion.div>
-
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(5)].map((_, i) => (
           <motion.div
@@ -149,7 +227,6 @@ export default function Hero() {
           />
         ))}
       </div>
-
       <motion.div
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         animate={{

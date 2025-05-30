@@ -15,15 +15,16 @@ import {
 
 import { Badge } from '@/components/ui/badge'
 import {
-  LucideCode,
-  LucideFramer,
-  LucideDatabase,
-  LucideZap,
   LucideBrain,
+  LucideCode,
+  LucideDatabase,
+  LucideFramer,
   LucideGraduationCap,
   LucideRocket,
   LucideStar,
+  LucideZap,
 } from 'lucide-react'
+import { useScrollTo } from '@/hooks/use-scrollto'
 
 const skillCategories = [
   {
@@ -185,6 +186,7 @@ export default function Skills() {
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
   const isMobile = useIsMobile()
   const { t } = useTranslations()
+  const { scrollTo } = useScrollTo()
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -222,6 +224,7 @@ export default function Skills() {
       transition: { duration: 0.2 },
     },
   }
+
 
   return (
     <section
@@ -600,6 +603,7 @@ export default function Skills() {
                   boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
                 }}
                 whileTap={{ scale: 0.98 }}
+                onClick={()=> scrollTo('contact')}
                 className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 {t('skills.callToAction.button')}

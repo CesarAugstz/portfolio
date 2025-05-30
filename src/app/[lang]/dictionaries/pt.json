@@ -11,7 +11,7 @@
     "greeting": "👋 Olá!",
     "prename": "Eu sou ",
     "name": "Cesar", 
-    "description": "Desenvolvedor frontend dedicado a criar experiências web excepcionais, interativas e intuitivas.",
+    "description": "Desenvolvedor full stack dedicado a criar experiências web excepcionais, interativas e intuitivas.",
     "beautiful": "excepcionais",
     "interactive": "interativas",
     "userFriendly": "intuitivas",
@@ -80,7 +80,9 @@
       "message": "Mensagem",
       "messagePlaceholder": "Sua mensagem",
       "sending": "Enviando...",
-      "sendMessage": "Enviar Mensagem"
+      "sendMessage": "Enviar Mensagem",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente mais tarde."
     },
     "info": {
       "title": "Informações de Contato",

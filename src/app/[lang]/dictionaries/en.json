@@ -11,7 +11,7 @@
     "greeting": "👋 Hello!",
     "prename": "I'm ",
     "name": "Cesar",
-    "description": "A passionate frontend developer dedicated to crafting exceptional, interactive, and intuitive web experiences.",
+    "description": "A passionate full stack developer dedicated to crafting exceptional, interactive, and intuitive web experiences.",
     "beautiful": "exceptional",
     "interactive": "interactive",
     "userFriendly": "intuitive",
@@ -80,7 +80,9 @@
       "message": "Message",
       "messagePlaceholder": "Your message",
       "sending": "Sending...",
-      "sendMessage": "Send Message"
+      "sendMessage": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "Something went wrong. Please try again later."
     },
     "info": {
       "title": "Contact Information",
