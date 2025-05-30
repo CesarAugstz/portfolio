@@ -84,7 +84,7 @@ const projects = [
     description:
       'An advanced IoT management platform for controlling and monitoring smart devices through MQTT and Tuya protocols. Features real-time device status, automation rules, and comprehensive analytics dashboard.',
     images: [
-      '/placeholder.svg?height=400&width=600&text=Device+Dashboard',
+      '/images/projects/cgl/1.png',
       '/placeholder.svg?height=400&width=600&text=Device+Control',
       '/placeholder.svg?height=400&width=600&text=Analytics+View',
       '/placeholder.svg?height=400&width=600&text=Automation+Rules',
@@ -196,7 +196,6 @@ export default function Projects() {
                   key={project.id}
                   variants={itemVariants}
                   custom={index}
-                  className="group"
                 >
                   <motion.div
                     variants={cardVariants}
@@ -207,9 +206,9 @@ export default function Projects() {
                     <Card className="overflow-hidden h-full flex flex-col bg-gradient-to-br from-card to-card/50 border-2 hover:border-primary/50 transition-all duration-500 shadow-lg hover:shadow-2xl">
                       <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-muted to-muted/50">
                         <Carousel className="w-full h-full">
-                          <CarouselContent>
+                          <CarouselContent className="h-full">
                             {project.images.map((image, imageIndex) => (
-                              <CarouselItem key={imageIndex}>
+                              <CarouselItem key={imageIndex} className="h-full">
                                 <div className="relative w-full h-full">
                                   <Image
                                     src={image}
