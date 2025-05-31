@@ -61,10 +61,10 @@ const projects = [
     description:
       'A comprehensive responsive website for a college featuring modern design, student portal, course management, and administrative tools. Built with cutting-edge technologies for optimal performance and user experience.',
     images: [
-      '/placeholder.svg?height=400&width=600&text=College+Homepage',
-      '/placeholder.svg?height=400&width=600&text=Student+Portal',
-      '/placeholder.svg?height=400&width=600&text=Course+Catalog',
-      '/placeholder.svg?height=400&width=600&text=Admin+Dashboard',
+      '/images/projects/fct/1.svg',
+      '/images/projects/fct/4.gif',
+      '/images/projects/fct/2.gif',
+      '/images/projects/fct/3.gif',
     ],
     tags: [
       'React',
@@ -84,10 +84,8 @@ const projects = [
     description:
       'An advanced IoT management platform for controlling and monitoring smart devices through MQTT and Tuya protocols. Features real-time device status, automation rules, and comprehensive analytics dashboard.',
     images: [
-      '/images/projects/cgl/1.png',
-      '/placeholder.svg?height=400&width=600&text=Device+Control',
-      '/placeholder.svg?height=400&width=600&text=Analytics+View',
-      '/placeholder.svg?height=400&width=600&text=Automation+Rules',
+      '/images/projects/cgl/1.svg',
+      '/images/projects/cgl/1.gif',
     ],
     tags: [
       'React',
