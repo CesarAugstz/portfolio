@@ -203,12 +203,18 @@ export default function Projects() {
                     whileHover="hover"
                     className="h-full"
                   >
-                    <Card className="overflow-hidden h-full flex flex-col bg-gradient-to-br from-card to-card/50 border-2 hover:border-primary/50 transition-all duration-500 shadow-lg hover:shadow-2xl">
+                    <Card className=" max-w-[90vw] overflow-hidden h-full flex flex-col bg-gradient-to-br from-card to-card/50 border-2 hover:border-primary/50 transition-all duration-500 shadow-lg hover:shadow-2xl">
                       <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-muted to-muted/50">
                         <Carousel className="w-full h-full">
-                          <CarouselContent className="h-full">
+                          <CarouselContent
+                            containerClassName="h-full "
+                            className="h-full "
+                          >
                             {project.images.map((image, imageIndex) => (
-                              <CarouselItem key={imageIndex} className="h-full">
+                              <CarouselItem
+                                key={imageIndex}
+                                className="h-full "
+                              >
                                 <div className="relative w-full h-full">
                                   <Image
                                     src={image}
@@ -216,7 +222,7 @@ export default function Projects() {
                                       imageIndex + 1
                                     }`}
                                     fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110 "
                                   />
                                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                 </div>
@@ -269,12 +275,11 @@ export default function Projects() {
                           </div>
                         </CardContent>
 
-                        <CardFooter className="p-0 flex justify-between gap-3">
+                        <CardFooter className="p-0 flex-col sm:flex-row justify-between gap-3">
                           <Button
                             variant="outline"
-                            size="sm"
                             asChild
-                            className="flex-1"
+                            className="flex-1 size-full"
                           >
                             <Link
                               href={project.githubUrl}
@@ -285,7 +290,10 @@ export default function Projects() {
                               {t('projects.viewCode')}
                             </Link>
                           </Button>
-                          <Button size="sm" asChild className="flex-1">
+                          <Button
+                            asChild
+                            className="flex-1 size-full"
+                          >
                             <Link
                               href={project.demoUrl}
                               target="_blank"
