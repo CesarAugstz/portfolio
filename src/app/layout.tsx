@@ -5,6 +5,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { LanguageProvider } from '@/components/language-provider'
 import { Toaster } from '@/components/ui/sonner'
+import CanvasCursor from '@/components/canvas-cursor'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,16 +23,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <CanvasCursor />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Toaster  position='bottom-center' richColors />
-          <LanguageProvider>
-            {children}
-          </LanguageProvider>
+          <Toaster position="bottom-center" richColors />
+          <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
