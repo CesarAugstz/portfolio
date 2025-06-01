@@ -23,7 +23,7 @@ function useHackerText(
     const startAnimation = () => {
       setIsAnimating(true)
       let iteration = 0
-      const totalFrames = duration / 30 
+      const totalFrames = duration / 30
       const incrementPerFrame = text.length / totalFrames
 
       const animate = () => {
@@ -160,10 +160,8 @@ export default function Hero() {
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button asChild size="lg">
-              <Link href="#projects">
-                {t('hero.viewProjects')} <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+            <Button onClick={() => scrollTo('projects')} size="lg">
+              {t('hero.viewProjects')} <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button
               variant="outline"

@@ -1,7 +1,7 @@
 import { useRef, useCallback } from 'react'
 import { animate } from 'framer-motion'
 
-type Sections = 'contact' | 'about' | 'projects' | 'skills'
+type Sections = 'contact' | 'about' | 'projects' | 'skills' | 'home'
 
 export function useScrollTo() {
   const isScrollingRef = useRef(false)
@@ -14,7 +14,7 @@ export function useScrollTo() {
     
     const elementTop = element.getBoundingClientRect().top
     const startPosition = window.scrollY
-    const targetPosition = startPosition + elementTop - 50
+    const targetPosition = startPosition + elementTop - 60
     
     animate(startPosition, targetPosition, {
       duration: 2,

@@ -1,27 +1,29 @@
-"use client"
+'use client'
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { LanguageSwitcher } from "@/components/language-switcher"
-import { useTranslations } from "@/hooks/useTranslations"
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/theme-toggle'
+import { LanguageSwitcher } from '@/components/language-switcher'
+import { useTranslations } from '@/hooks/useTranslations'
+import { useScrollTo } from '@/hooks/use-scrollto'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
   const { t } = useTranslations()
+  const { scrollTo } = useScrollTo()
 
   const navItems = [
-    { name: t("navigation.home"), path: "/" },
-    { name: t("navigation.about"), path: "/#about" },
-    { name: t("navigation.projects"), path: "/#projects" },
-    { name: t("navigation.skills"), path: "/#skills" },
-    { name: t("navigation.contact"), path: "/#contact" },
+    { name: t('navigation.home'), onClick: () => scrollTo('home') },
+    { name: t('navigation.about'), onClick: () => scrollTo('about') },
+    { name: t('navigation.projects'), onClick: () => scrollTo('projects') },
+    { name: t('navigation.skills'), onClick: () => scrollTo('skills') },
+    { name: t('navigation.contact'), onClick: () => scrollTo('contact') },
   ]
 
   useEffect(() => {
@@ -29,31 +31,36 @@ export default function Header() {
       setScrolled(window.scrollY > 20)
     }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
     <header
       className={`fixed top-1 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+        scrolled
+          ? 'bg-background/80 backdrop-blur-md shadow-sm'
+          : 'bg-transparent'
       }`}
     >
       <div className="container-width px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="text-xl font-bold tracking-tighter relative">
+          <Link
+            href="/"
+            className="text-xl font-bold tracking-tighter relative"
+          >
             <motion.span
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="relative z-10"
             >
-              {t("navigation.portfolio")}
+              {t('navigation.portfolio')}
             </motion.span>
             <motion.div
               className="absolute -bottom-1 left-0 h-1 bg-primary rounded-full"
               initial={{ width: 0 }}
-              animate={{ width: "100%" }}
+              animate={{ width: '100%' }}
               transition={{ delay: 0.2, duration: 0.5 }}
             />
           </Link>
@@ -67,14 +74,12 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 + 0.2, duration: 0.5 }}
               >
-                <Link
-                  href={item.path}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    pathname === item.path ? "text-primary" : "text-muted-foreground"
-                  }`}
+                <div
+                  onClick={item.onClick}
+                  className={`text-sm font-medium transition-colors hover:text-primary text-muted-foreground cursor-pointer`}
                 >
                   {item.name}
-                </Link>
+                </div>
               </motion.div>
             ))}
             <motion.div
@@ -92,8 +97,17 @@ export default function Header() {
           <div className="flex items-center md:hidden space-x-2">
             <LanguageSwitcher />
             <ThemeToggle />
-            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle Menu"
+            >
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -104,7 +118,7 @@ export default function Header() {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
+            animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="md:hidden bg-background/95 backdrop-blur-sm"
@@ -118,15 +132,15 @@ export default function Header() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1, duration: 0.3 }}
                   >
-                    <Link
-                      href={item.path}
-                      className={`block py-2 text-base font-medium transition-colors hover:text-primary ${
-                        pathname === item.path ? "text-primary" : "text-muted-foreground"
-                      }`}
-                      onClick={() => setIsOpen(false)}
+                    <div
+                      className={`block py-2 text-base font-medium transition-colors hover:text-primary text-muted-foreground cursor-pointer`}
+                      onClick={() => {
+                        setIsOpen(false)
+                        item.onClick()
+                      }}
                     >
                       {item.name}
-                    </Link>
+                    </div>
                   </motion.div>
                 ))}
               </nav>
