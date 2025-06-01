@@ -62,7 +62,7 @@ const projects = [
       'A comprehensive responsive website for a college featuring modern design, student portal, course management, and administrative tools. Built with cutting-edge technologies for optimal performance and user experience.',
     images: [
       '/images/projects/fct/1.svg',
-      '/images/projects/fct/4.gif',
+      '/images/projects/fct/5.gif',
       '/images/projects/fct/2.gif',
       '/images/projects/fct/3.gif',
     ],
